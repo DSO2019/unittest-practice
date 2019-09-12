@@ -10,6 +10,7 @@ public class QuesoChihuahuaTest {
     @Before
     public void setUp(){
         quesoChihuahua = new QuesoChihuahua();
+
     }
 
     @Test
