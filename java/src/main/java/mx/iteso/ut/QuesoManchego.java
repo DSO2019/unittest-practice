@@ -4,7 +4,7 @@ public class QuesoManchego implements Queso {
 
     boolean melted;
     int temperature;
-    int melting = 20;
+    int melting = 18;
 
     public boolean isMelted() {
         return this.melted;

@@ -29,7 +29,7 @@ public class QuesoManchegoTest {
     }
     @Test
     public void testMelting(){
-        assertEquals(20,quesoManchego.getMeltingTemperature());
+        assertEquals(18,quesoManchego.getMeltingTemperature());
     }
 
 }
