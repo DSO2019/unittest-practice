@@ -30,7 +30,7 @@ public class TortillaHarinaTest {
         assertFalse(tortillaHarina.isToasted());
     }
     @Test
-    public void testMelting(){
+    public void testToasting(){
         assertEquals(0, tortillaHarina.getToastTemperature());
     }
 
