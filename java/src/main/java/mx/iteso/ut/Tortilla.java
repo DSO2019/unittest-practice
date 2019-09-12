@@ -6,5 +6,4 @@ public interface Tortilla {
     public int getCurrentTemperature();
     public void setCurrentTemperature(int temp);
     public void toast(boolean toasted);
-
 }
