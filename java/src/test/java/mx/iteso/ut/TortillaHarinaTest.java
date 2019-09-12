@@ -13,7 +13,7 @@ public class TortillaHarinaTest {
     }
 
     @Test
-    public int TestCurrentTemperature(){
+    public void TestCurrentTemperature(){
         tortillaHarina.setCurrentTemperature(15);
         assertEquals(15,tortillaHarina.getCurrentTemperature());
     }

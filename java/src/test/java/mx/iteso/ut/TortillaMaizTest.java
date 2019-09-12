@@ -1,7 +1,5 @@
 package mx.iteso.ut;
 
-package mx.iteso.ut;
-
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
@@ -16,7 +14,7 @@ public class TortillaMaizTest {
     }
 
     @Test
-    public int TestCurrentTemperature(){
+    public void TestCurrentTemperature(){
         tortillaMaiz.setCurrentTemperature(20);
         assertEquals(20,tortillaMaiz.getCurrentTemperature());
     }
