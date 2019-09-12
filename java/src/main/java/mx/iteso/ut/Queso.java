@@ -1,4 +1,4 @@
-package mx.iteso.ut;
+    package mx.iteso.ut;
 
 public interface Queso {
     public boolean isMelted();
