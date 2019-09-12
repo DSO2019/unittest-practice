@@ -3,3 +3,4 @@ target/
 *.class
 .idea/
 .DS_Store
+/.metadata/
