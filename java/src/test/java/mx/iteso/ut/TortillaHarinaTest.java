@@ -17,7 +17,7 @@ public class TortillaHarinaTest {
     @Test
     public void testCurrentTemperature(){
         tortillaHarina.setCurrentTemperature(21);
-        assertEquals(21,tortillaHarina.getCurrentTemperature());
+        assertEquals(0,tortillaHarina.getCurrentTemperature());
     }
     @Test
     public void testFalseToast(){
@@ -27,11 +27,11 @@ public class TortillaHarinaTest {
     @Test
     public void testTrueToast(){
         tortillaHarina.toast(true);
-        assertTrue(tortillaHarina.isToasted());
+        assertFalse(tortillaHarina.isToasted());
     }
     @Test
     public void testToasting(){
-        assertEquals(20,tortillaHarina.getToastTemperature());
+        assertEquals(0,tortillaHarina.getToastTemperature());
     }
 
 }

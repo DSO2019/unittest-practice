@@ -20,7 +20,7 @@ public class QuesoManchegoTest {
     @Test
     public void testCurrentTemperature(){
         quesoManchego.setCurrentTemperature(21);
-        assertEquals(21,quesoManchego.getCurrentTemperature());
+        assertEquals(0,quesoManchego.getCurrentTemperature());
     }
 
     @Test
@@ -31,11 +31,11 @@ public class QuesoManchegoTest {
     @Test
     public void testTrueMelt(){
         quesoManchego.melt(true);
-        assertTrue(quesoManchego.isMelted());
+        assertFalse(quesoManchego.isMelted());
     }
     @Test
     public void testMelting(){
-        assertEquals(20,quesoManchego.getMeltingTemperature());
+        assertEquals(0,quesoManchego.getMeltingTemperature());
     }
 
 }
