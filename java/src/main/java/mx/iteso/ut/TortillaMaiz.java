@@ -5,7 +5,8 @@ public class TortillaMaiz implements Tortilla {
         return false;
     }
 
-    public int getToastTemperature() {
+    public int getToastTemperature()
+    {
         return 0;
     }
 
