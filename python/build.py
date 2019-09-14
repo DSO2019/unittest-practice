@@ -8,7 +8,7 @@ use_plugin("python.coverage")
 use_plugin("python.distutils")
 
 
-name = "unittest-practice"
+name = "quesadillaPrueba"
 default_task = "publish"
 
 
