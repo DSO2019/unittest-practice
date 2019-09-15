@@ -1,5 +1,5 @@
 class Quesadilla:
-    def __init__(self, queso = 0, tortilla = 0, heatLevel = 0):
+    def __init__(self, queso = None, tortilla = None, heatLevel = 0):
         self.queso = queso
         self.tortilla = tortilla
         self.heatLevel = heatLevel
@@ -27,9 +27,9 @@ class Quesadilla:
             self.getTortilla().setCurrentTemperature(self.getTortilla().getCurrentTemperature() + self.getHeatLevel())
             self.getQueso().setCurrentTemperature(self.getQueso().getCurrentTemperature() + self.getHeatLevel())
             if (self.getTortilla().getCurrentTemperature() >= self.getTortilla().getToastTemperature()):
-                self.getTortilla().toast(true)
+                self.getTortilla().toast(True)
             if (self.getQueso().getCurrentTemperature() >= self.getQueso().getMeltingTemperature()):
-                self.getQueso().melt(true)
+                self.getQueso().melt(True)
         
         if(self.getQueso().isMelted() and self.getTortilla().isToasted()):
             return "Perfect quesadilla"
