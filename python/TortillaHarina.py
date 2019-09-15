@@ -1,9 +1,9 @@
-class TortillaMaiz:
+class TortillaHarina:
 
 	def __init__(self):
 		self.toasted = None
 		self.currentTemperature = None
-		self.toastTemperature = 40
+		self.toastTemperature = 30
 
 	def isToasted(self):
 		return self.toasted
@@ -19,5 +19,3 @@ class TortillaMaiz:
 
 	def toast(self,toasted):
 		self.toasted = toasted
-
-
