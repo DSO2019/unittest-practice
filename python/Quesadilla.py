@@ -1,3 +1,6 @@
+import QuesoManchego
+import TortillaMaiz
+
 class Quesadilla:
 
 	def __init__(self, queso = None, tortilla = None, heatLevel = None):
@@ -10,7 +13,7 @@ class Quesadilla:
 		return self.queso
 
 	def setQueso(self, queso):
-		self.queso = 
+		self.queso = queso
 
 	def getTortilla(self):
 		return self.tortilla
@@ -25,21 +28,22 @@ class Quesadilla:
 		self.heatLevel = heatLevel
 
 	def prepareSingle(self):
-		while getQueso().getCurrentTemperature() < getQueso.getMeltingTemperature() 
-		and getTortilla().getCurrentTemperature() < getTortilla().getToastTemperature():
-			getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel())
-			getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel())
-			if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature()):
-				getTortilla().toast(True)
-			if(getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature()):
-				getQueso().melt(True)
+		while (self.getQueso().getCurrentTemperature() < self.getQueso().getMeltingTemperature() 
+		and self.getTortilla().getCurrentTemperature() < self.getTortilla().getToastTemperature()):
+			self.getQueso().setCurrentTemperature(self.getQueso().getCurrentTemperature() + self.getHeatLevel())
+			if (self.getTortilla().getCurrentTemperature() >= self.getTortilla().getToastTemperature()):
+				self.getTortilla().toast(True)
 
-			if(getQueso().isMelted() and getTortilla().isToasted()):
-				return 'Perfect quesadilla'
-			if(getQueso().isMelted() and !getTortilla().isToasted()):
-				return 'Good quesadilla'
-			if(!getQueso().isMelted() and getTortilla().isToasted()):
-				return 'Terrible quesadilla'
-			if(!getQueso().isMelted() and !getTortilla().isToasted()): 
-				return 'You ran out of gas'
+			if(self.getQueso().getCurrentTemperature() >= self.getQueso().getMeltingTemperature()):
+				self.getQueso().melt(True)
+
+
+		if(self.getQueso().isMelted() and self.getTortilla().isToasted()):
+			return 'Perfect quesadilla'
+		if(self.getQueso().isMelted() and not self.getTortilla().isToasted()):
+			return 'Good quesadilla'
+		if(not self.getQueso().isMelted() and self.getTortilla().isToasted()):
+			return 'Terrible quesadilla'
+		if(not self.getQueso().isMelted() and not self.getTortilla().isToasted()):
+			return 'You ran out of gas'
 

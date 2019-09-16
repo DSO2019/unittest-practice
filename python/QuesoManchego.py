@@ -18,4 +18,4 @@ class QuesoManchego:
 		self.currentTemperature = temp
 
 	def melt(self, melted):
-		self.melt = melted
+		self.melted = melted
