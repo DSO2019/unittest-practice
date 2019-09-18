@@ -1,19 +1,21 @@
 class TortillaMaiz:
 
-    def __init__():
+    def __init__(self,toasted=None,temperature=None):
         self.toasting = 10
+        self.toasted = toasted
+        self.temperature = temperature
 
-    def isToasted():
+    def isToasted(self):
         return self.toasted
 
-    def getToastTemperature():
+    def getToastTemperature(self):
         return self.toasting
 
-    def getCurrentTemperature():
+    def getCurrentTemperature(self):
         return self.temperature
 
-    def setCurrentTemperature(temp):
+    def setCurrentTemperature(self,temp):
         self.temperature = temp
 
-    def toast(toasted):
+    def toast(self,toasted):
         self.toasted = toasted

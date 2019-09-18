@@ -3,7 +3,7 @@ from ...main.python import Quesadilla,QuesoManchego,TortillaHarina
 import unittest
 
 class QuesadillaTest(unittest.TestCase):
-    def _init_(self):
+    def setUp(self):
         self.quesadilla = Quesadilla()
         self.mockedQueso = mock(QuesoManchego)  
         self.mockedTortilla = mock(TortillaHarina)

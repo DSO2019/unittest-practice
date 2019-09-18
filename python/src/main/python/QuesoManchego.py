@@ -1,19 +1,21 @@
 class QuesoManchego:
 
-    def __init__():
+    def __init__(self,temperature=None,melted=None):
         self.melting = 20
+        self.temperature = temperature
+        self.melted = melted
 
-    def isMelted():
+    def isMelted(self):
         return self.melted
 
-    def getCurrentTemperature():
+    def getCurrentTemperature(self):
         return self.temperature
 
-    def getMeltingTemperature():
+    def getMeltingTemperature(self):
         return self.melting
 
-    def setCurrentTemperature(temp):
+    def setCurrentTemperature(self,temp):
         self.temperature = temp
 
-    def melt(melted):
+    def melt(self,melted):
         self.melted = melted

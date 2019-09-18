@@ -1,22 +1,21 @@
-from mockito import when, mock, verify,assertEquals,assertFalse,assertTrue
 from ...main.python import TortillaHarina
 import unittest
 
-class TortillaHarinaTest(unittest.TestCase):
-    def __init__(self):
+class TortillaHarina_test(unittest.TestCase):
+    def setUp(self):
         self.tortillaHarina = TortillaHarina()
 
-    def testCurrentTemperature(self):
+    def test_CurrentTemperature(self):
         self.tortillaHarina.setCurrentTemperature(21)
-        assertEquals(21,self.tortillaHarina.getCurrentTemperature())
+        assertEqual(21,self.tortillaHarina.getCurrentTemperature())
 
-    def testFalseToast(self):
+    def test_FalseToast(self):
         self.tortillaHarina.toast(False)
         assertFalse(self.tortillaHarina.isToasted())
 
-    def testTrueToast(self):
+    def test_TrueToast(self):
         self.tortillaHarina.toast(True)
         assertTrue(self.tortillaHarina.isToasted())
 
-    def testToasting(self):
-        assertEquals(10,self.tortillaHarina.getToastTemperature())
+    def test_Toasting(self):
+        assertEqual(10,self.tortillaHarina.getToastTemperature())
