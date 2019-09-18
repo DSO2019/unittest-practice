@@ -21,7 +21,6 @@ public class QuesadillaTest {
         quesadilla.setQueso(mockedQueso);
         quesadilla.setTortilla(mockedTortilla);
 
-
     }
 
     @Test
