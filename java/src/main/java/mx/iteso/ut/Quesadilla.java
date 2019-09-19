@@ -12,20 +12,26 @@ public class Quesadilla {
                 && getTortilla().getCurrentTemperature() < getTortilla().getToastTemperature()) {
             getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
             getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
-            if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
+            if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature()) {
                 getTortilla().toast(true);
-            if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
+            }
+            if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature()) {
                 getQueso().melt(true);
+            }
         }
 
-        if (getQueso().isMelted() && getTortilla().isToasted())
+        if (getQueso().isMelted() && getTortilla().isToasted()) {
             return "Perfect quesadilla";
-        if (getQueso().isMelted() && !getTortilla().isToasted())
+        }
+        if (getQueso().isMelted() && !getTortilla().isToasted()) {
             return "Good quesadilla";
-        if (!getQueso().isMelted() && getTortilla().isToasted())
+        }
+        if (!getQueso().isMelted() && getTortilla().isToasted()) {
             return "Terrible quesadilla";
-        else
+        }
+        else {
             return "You ran out of gas";
+        }
 
     }
 
@@ -36,26 +42,35 @@ public class Quesadilla {
             getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
             getTortilla2().setCurrentTemperature(getTortilla2().getCurrentTemperature() + getHeatLevel());
             getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
-            if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
+            if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature()) {
                 getTortilla().toast(true);
-            if (getTortilla2().getCurrentTemperature() >= getTortilla2().getToastTemperature())
+            }
+            if (getTortilla2().getCurrentTemperature() >= getTortilla2().getToastTemperature()) {
                 getTortilla2().toast(true);
-            if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
+            }
+            if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature()) {
                 getQueso().melt(true);
+            }
         }
 
-        if (getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted())
+        if (getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted()) {
             return "Perfect quesadilla";
-        if (getQueso().isMelted() && !getTortilla().isToasted() && getTortilla2().isToasted())
+        }
+        if (getQueso().isMelted() && !getTortilla().isToasted() && getTortilla2().isToasted()) {
             return "Good quesadilla";
-        if (getQueso().isMelted() && !getTortilla().isToasted() && !getTortilla2().isToasted())
+        }
+        if (getQueso().isMelted() && !getTortilla().isToasted() && !getTortilla2().isToasted()) {
             return "Regular quesadilla";
-        if (!getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted())
+        }
+        if (!getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted()) {
             return "Bad quesadilla";
-        if (!getQueso().isMelted() && !getTortilla().isToasted() && getTortilla2().isToasted())
+        }
+        if (!getQueso().isMelted() && !getTortilla().isToasted() && getTortilla2().isToasted()) {
             return "Terrible quesadilla";
-        else
+        }
+        else {
             return "You ran out of gas";
+        }
     }
 
     public Queso getQueso() {
