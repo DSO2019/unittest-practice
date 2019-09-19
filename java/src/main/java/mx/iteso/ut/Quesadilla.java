@@ -8,26 +8,27 @@ package mx.iteso.ut;
 public class Quesadilla
 {
     private Queso queso;
-    private Tortilla tortilla;
+    private Tortilla tortilla_1;
+    private Tortilla tortilla_2;
     private int heatLevel;
 
     public String prepareSingle(){
 
 
-     while(getQueso().getCurrentTemperature()< getQueso().getMeltingTemperature() && getTortilla().getCurrentTemperature()< getTortilla().getToastTemperature()){
-         getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
+     while(getQueso().getCurrentTemperature()< getQueso().getMeltingTemperature() && getTortilla_1().getCurrentTemperature()< getTortilla_1().getToastTemperature()){
+        getTortilla_1().setCurrentTemperature(getTortilla_1().getCurrentTemperature() + getHeatLevel());
          getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
-         if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
-             getTortilla().toast(true);
+         if (getTortilla_1().getCurrentTemperature() >= getTortilla_1().getToastTemperature())
+         getTortilla_1().toast(true);
          if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
              getQueso().melt(true);
      }
 
-     if(getQueso().isMelted() && getTortilla().isToasted())
+     if(getQueso().isMelted() && getTortilla_1().isToasted())
          return "Perfect quesadilla";
-     if(getQueso().isMelted() && !getTortilla().isToasted())
+     if(getQueso().isMelted() && !getTortilla_1().isToasted())
          return "Good quesadilla";
-     if(!getQueso().isMelted() && getTortilla().isToasted())
+     if(!getQueso().isMelted() && getTortilla_1().isToasted())
          return "Terrible quesadilla";
      else
          return "You ran out of gas";
@@ -54,12 +55,21 @@ public class Quesadilla
     }
 
 
-    public Tortilla getTortilla() {
-        return tortilla;
+    public Tortilla getTortilla_1() {
+        return tortilla_1;
     }
 
-    public void setTortilla(Tortilla tortilla) {
-        this.tortilla = tortilla;
+    public void setTortilla_1(Tortilla tortilla) {
+        this.tortilla_1 = tortilla;
+    }
+
+    
+    public Tortilla getTortilla_2() {
+        return tortilla_2;
+    }
+
+    public void setTortilla_2(Tortilla tortilla) {
+        this.tortilla_2 = tortilla;
     }
 
     public int getHeatLevel() {
