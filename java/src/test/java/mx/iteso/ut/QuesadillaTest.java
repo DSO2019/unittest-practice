@@ -192,7 +192,7 @@ public class QuesadillaTest
 
         when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,8,8,14);
         when(mockedQueso.getMeltingTemperature()).thenReturn(10);
-        assertEquals("Terrible quesadilla",quesadilla.prepareDouble());
+        assertEquals("Quesadilla regular",quesadilla.prepareDouble());
 
         verify(mockedTortilla,never()).toast(false);
         verify(mockedTortilla2,never()).toast(false);
@@ -214,7 +214,7 @@ public class QuesadillaTest
 
         when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,8,8,14);
         when(mockedQueso.getMeltingTemperature()).thenReturn(10);
-        assertEquals("Terrible quesadilla",quesadilla.prepareDouble());
+        assertEquals("Quesadilla regular",quesadilla.prepareDouble());
 
         verify(mockedTortilla,never()).toast(false);
         verify(mockedTortilla2,never()).toast(false);
