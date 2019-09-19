@@ -5,17 +5,16 @@ package mx.iteso.ut;
  */
 public class Quesadilla {
     private Queso queso;
-    private Tortilla tortilla;
+    private Tortilla tortilla, tortilla2;
     private int heatLevel;
 
     public String prepareSingle() {
-
-
         while (getQueso().getCurrentTemperature() < getQueso().getMeltingTemperature() &&
                 getTortilla().getCurrentTemperature() < getTortilla().getToastTemperature()) {
 
             getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
             getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
+
             if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
                 getTortilla().toast(true);
             if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
@@ -34,14 +33,39 @@ public class Quesadilla {
     }
 
     public String prepareDouble() {
-        // tortilla 1 tostada, tortilla 2 tostada, queso derretido
-        // tortilla 1 no tostada, tortilla 2 tostada, queso derretido
-        // tortilla 1 no tostada, tortilla 2 tostada, queso no derretido
-        // tortilla 1 no tostada, tortilla 2 no tostada, queso no derretido
-        // tortilla 1 no tostada, tortilla 2 no tostada, queso derretido
-        // tortilla 1 tostada, tortilla 2 tostada, queso no derretido
+        while (getQueso().getCurrentTemperature() < getQueso().getMeltingTemperature() &&
+                getTortilla().getCurrentTemperature() < getTortilla().getToastTemperature() &&
+                getTortilla2().getCurrentTemperature() < getTortilla2().getToastTemperature()) {
 
-        return "";
+            getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
+            getTortilla2().setCurrentTemperature(getTortilla2().getCurrentTemperature() + getHeatLevel());
+
+            getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
+
+            if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
+                getTortilla().toast(true);
+            if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
+                getQueso().melt(true);
+
+            if (getTortilla2().getCurrentTemperature() >= getTortilla2().getToastTemperature())
+                getTortilla2().toast(true);
+        }
+
+        // Ambas tortillas tostadas, queso derretido
+        if (getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted())
+            return "Perfect quesadilla";
+        // solo 1 tortilla tostada, queso derretido
+        if (getQueso().isMelted() && ((getTortilla().isToasted() && !getTortilla2().isToasted()) || (!getTortilla().isToasted() && getTortilla2().isToasted())))
+            return "Good quesadilla";
+        // Ambas tortillas tostadas, queso no derretido
+        if (!getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted())
+            return "Bad quesadilla";
+        // Solo 1 tortilla tostada, queso no derretido
+        if (!getQueso().isMelted() && ((getTortilla().isToasted() && !getTortilla2().isToasted()) || (!getTortilla().isToasted() && getTortilla2().isToasted())))
+            return "Terrible quesadilla";
+        // Ninguna tortilla tostada, queso no derretido
+        else
+            return "Not cooked";
     }
 
     public Queso getQueso() {
@@ -52,13 +76,21 @@ public class Quesadilla {
         this.queso = queso;
     }
 
-
     public Tortilla getTortilla() {
         return tortilla;
     }
 
+    public Tortilla getTortilla2() {
+        return tortilla2;
+    }
+
     public void setTortilla(Tortilla tortilla) {
         this.tortilla = tortilla;
+    }
+
+    public void setTortillaDoble(Tortilla tortilla, Tortilla tortilla2) {
+        this.tortilla = tortilla;
+        this.tortilla2 = tortilla2;
     }
 
     public int getHeatLevel() {
@@ -68,4 +100,5 @@ public class Quesadilla {
     public void setHeatLevel(int heatLevel) {
         this.heatLevel = heatLevel;
     }
+
 }
