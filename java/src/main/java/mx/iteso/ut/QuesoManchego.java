@@ -1,5 +1,5 @@
 package mx.iteso.ut;
-/** Clase de queso manchego. */
+/** Clase del queso manchego. */
 public class QuesoManchego implements Queso {
     /** Si está derretido o no. */
     private boolean melted;
