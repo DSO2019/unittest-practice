@@ -30,13 +30,11 @@ namespace unittestPractice.test
         {
             mockedQueso.Setup(q => q.isMelted()).Returns(true);
             mockedTortilla.Setup(t => t.isToasted()).Returns(true);
-            mockedTortilla.Setup(t => t.getCurrentTemperature()).Returns(14);//I've got doubts
+            mockedTortilla.Setup(t => t.getCurrentTemperature()).Returns(14);
             mockedTortilla.Setup(t => t.getToastTemperature()).Returns(10);
             mockedQueso.Setup(q => q.getCurrentTemperature()).Returns(14);
             mockedQueso.Setup(q => q.getMeltingTemperature()).Returns(10);
             Assert.AreEqual("Perfect quesadilla", quesadilla.prepareSingle());
-            //mockedTortilla.Verify(t => t.toast(true),Times.Once); //Not working at the moment, need to ask the professor
-            //mockedQueso.Verify(q => q.melt(true), Times.Once);
         }
 
         [TestCase]
@@ -44,13 +42,11 @@ namespace unittestPractice.test
         {
             mockedQueso.Setup(q => q.isMelted()).Returns(true);
             mockedTortilla.Setup(t => t.isToasted()).Returns(false);
-            mockedTortilla.Setup(t => t.getCurrentTemperature()).Returns(14);//I've got doubts
+            mockedTortilla.Setup(t => t.getCurrentTemperature()).Returns(14);
             mockedTortilla.Setup(t => t.getToastTemperature()).Returns(20);
             mockedQueso.Setup(q => q.getCurrentTemperature()).Returns(14);
             mockedQueso.Setup(q => q.getMeltingTemperature()).Returns(10);
             Assert.AreEqual("Good quesadilla", quesadilla.prepareSingle());
-            //mockedTortilla.Verify(t =>  t.toast(true), Times.Never);
-            //mockedQueso.Verify(q => q.melt(true), Times.Once);
         }
 
         [TestCase]
@@ -58,13 +54,11 @@ namespace unittestPractice.test
         {
             mockedQueso.Setup(q => q.isMelted()).Returns(false);
             mockedTortilla.Setup(t => t.isToasted()).Returns(true);
-            mockedTortilla.Setup(t => t.getCurrentTemperature()).Returns(14);//I've got doubts
+            mockedTortilla.Setup(t => t.getCurrentTemperature()).Returns(14);
             mockedTortilla.Setup(t => t.getToastTemperature()).Returns(20);
             mockedQueso.Setup(q => q.getCurrentTemperature()).Returns(14);
             mockedQueso.Setup(q => q.getMeltingTemperature()).Returns(10);
             Assert.AreEqual("Terrible quesadilla", quesadilla.prepareSingle());
-            //mockedTortilla.Verify(t =>  t.toast(true), Times.Never);
-            //mockedQueso.Verify(q => q.melt(true), Times.Once);
         }
 
         [TestCase]
@@ -72,13 +66,11 @@ namespace unittestPractice.test
         {
             mockedQueso.Setup(q => q.isMelted()).Returns(false);
             mockedTortilla.Setup(t => t.isToasted()).Returns(false);
-            mockedTortilla.Setup(t => t.getCurrentTemperature()).Returns(14);//I've got doubts
+            mockedTortilla.Setup(t => t.getCurrentTemperature()).Returns(14);
             mockedTortilla.Setup(t => t.getToastTemperature()).Returns(20);
             mockedQueso.Setup(q => q.getCurrentTemperature()).Returns(14);
             mockedQueso.Setup(q => q.getMeltingTemperature()).Returns(10);
             Assert.AreEqual("You ran out of gas", quesadilla.prepareSingle());
-            //mockedTortilla.Verify(t =>  t.toast(true), Times.Never);
-            //mockedQueso.Verify(q => q.melt(true), Times.Once);
         }
 
 
