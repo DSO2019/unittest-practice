@@ -127,7 +127,7 @@ public class QuesadillaDobleTest {
 
 
     @Test
-    public void noseCocino() {
+    public void noSeCocino() {
         when(mockedQueso.isMelted()).thenReturn(false);
         when(mockedTortilla.isToasted()).thenReturn(false);
         when(mockedTortilla.getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
