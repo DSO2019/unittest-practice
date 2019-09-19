@@ -60,10 +60,13 @@ public class Quesadilla {
         // Ambas tortillas tostadas, queso no derretido
         if (!getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted())
             return "Bad quesadilla";
+        // Ninguna tortilla tostada, queso derretido
+        if (getQueso().isMelted() && !getTortilla().isToasted() && !getTortilla2().isToasted())
+            return "Regular quesadilla";
         // Solo 1 tortilla tostada, queso no derretido
         if (!getQueso().isMelted() && ((getTortilla().isToasted() && !getTortilla2().isToasted()) || (!getTortilla().isToasted() && getTortilla2().isToasted())))
             return "Terrible quesadilla";
-        // Ninguna tortilla tostada, queso no derretido
+            // Ninguna tortilla tostada, queso no derretido
         else
             return "Not cooked";
     }
