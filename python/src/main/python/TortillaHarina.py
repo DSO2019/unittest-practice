@@ -1,6 +1,6 @@
 class TortillaHarina:
 
-    def __init__(self,toasted=None,temperature=None):
+    def __init__(self, toasted=None, temperature=None):
         self.toasting = 10
         self.toasted = toasted
         self.temperature = temperature
@@ -14,9 +14,9 @@ class TortillaHarina:
     def getCurrentTemperature(self):
         return self.temperature
 
-    def setCurrentTemperature(self,temp):
+    def setCurrentTemperature(self, temp):
         self.temperature = temp
 
-    def toast(self,toasted):
+    def toast(self, toasted):
         self.toasted = toasted
 
