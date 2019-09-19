@@ -1,0 +1,4 @@
+C:\Users\lmrod\Documents\unittest-practice\csharp\unittest-practice\obj\Debug\netcoreapp2.2\unittest-practice.csprojAssemblyReference.cache
+C:\Users\lmrod\Documents\unittest-practice\csharp\unittest-practice\obj\Debug\netcoreapp2.2\unittest-practice.csproj.CoreCompileInputs.cache
+C:\Users\lmrod\Documents\unittest-practice\csharp\unittest-practice\obj\Debug\netcoreapp2.2\unittest-practice.AssemblyInfoInputs.cache
+C:\Users\lmrod\Documents\unittest-practice\csharp\unittest-practice\obj\Debug\netcoreapp2.2\unittest-practice.AssemblyInfo.cs
