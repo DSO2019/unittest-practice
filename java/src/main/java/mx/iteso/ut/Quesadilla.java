@@ -87,26 +87,26 @@ public class Quesadilla
         // tortilla 2 tostada
         // queso no derretido
 
-        if(getQueso().isMelted() && !getTortilla().isToasted() && getTortilla2().isToasted())
-            return "Quesadilla terribe";
+        if(!getQueso().isMelted() && !getTortilla().isToasted() && getTortilla2().isToasted())
+            return "Quesadilla terrible";
 
         // tortilla 1 tostada
         // tortilla 2 no tostada
         // queso no derretido
 
-        if(getQueso().isMelted() && getTortilla().isToasted() && !getTortilla2().isToasted())
-            return "Quesadilla terribe";
+        if(!getQueso().isMelted() && getTortilla().isToasted() && !getTortilla2().isToasted())
+            return "Quesadilla terrible";
 
             // tortilla 1 no tostada
             // tortilla 2 no tostada
             // queso derretido
-        if(getQueso().isMelted() && !getTortilla().isToasted() && !getTortilla2().isToasted())
+        if(!getQueso().isMelted() && !getTortilla().isToasted() && !getTortilla2().isToasted())
             return "Quesadilla regular";
 
             // tortilla 1 tostada
             // tortilla 2 tostada
             // queso no derretido
-        if(getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted())
+        if(!getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted())
                 return "Quesadilla Mala";
 
             // tortilla 1 no tostada
