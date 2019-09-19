@@ -1,11 +1,13 @@
 import QuesoManchego
 import TortillaMaiz
 
+
 class Quesadilla:
 
-	def __init__(self, queso = None, tortilla = None, heatLevel = None):
+	def __init__(self, queso = None, tortilla = None, tortilla2 = None, heatLevel = None):
 		self.queso = queso
 		self.tortilla = tortilla
+		self.tortilla2 = tortilla2
 		self.heatLevel = heatLevel
 
 
@@ -20,6 +22,12 @@ class Quesadilla:
 
 	def setTortilla(self, tortilla):
 		self.tortilla = tortilla
+
+	def getTortilla2(self):
+		return self.tortilla2
+
+	def setTortilla2(self, tortilla):
+		self.tortilla2 = tortilla
 
 	def getHeatLevel(self):
 		return self.heatLevel
@@ -46,4 +54,5 @@ class Quesadilla:
 			return 'Terrible quesadilla'
 		if(not self.getQueso().isMelted() and not self.getTortilla().isToasted()):
 			return 'You ran out of gas'
+
 

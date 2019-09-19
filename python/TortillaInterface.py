@@ -1,23 +1,25 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 
-class TortillaInterface(ABC):
+class Tortilla:
 
-	@abstractmethod
+	def __init__(self):
+		pass
+	#@abstractmethod
 	def isToasted(self):
 		pass
 
-	@abstractmethod
+	#@abstractmethod
 	def getToastTemperature(self):
 		pass
 
-	@abstractmethod
+	#@abstractmethod
 	def getCurrentTemperature(self):
 		pass
 
-	@abstractmethod
+	#@abstractmethod
 	def setCurrentTemperature(self):
 		pass
 
-	@abstractmethod
-	def toast(self):
+#	@abstractmethod
+	def toast(self, toast):
 		pass
