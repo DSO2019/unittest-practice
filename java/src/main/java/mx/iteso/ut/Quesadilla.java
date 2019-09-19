@@ -50,6 +50,8 @@ public class Quesadilla
             return "Perfect quesadilla";
         if((getQueso().isMelted() && !getTortilla().isToasted() && getTortilla_2().isToasted()) || (getQueso().isMelted() && getTortilla().isToasted() && !getTortilla_2().isToasted()))
             return "Good quesadilla";
+        if(getQueso().isMelted() && !getTortilla().isToasted() && !getTortilla_2().isToasted())
+            return "Regular quesadilla";
         if(!getQueso().isMelted() && getTortilla().isToasted() && getTortilla_2().isToasted())
             return "Bad quesadilla";
         if((!getQueso().isMelted() && !getTortilla().isToasted() && getTortilla_2().isToasted()) || (!getQueso().isMelted() && getTortilla().isToasted() && !getTortilla_2().isToasted()))

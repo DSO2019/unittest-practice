@@ -106,6 +106,23 @@ public class QuesadillaTest
        verify(mockedTortilla_2,times(1)).toast(true);
        verify(mockedQueso,times(1)).melt(true);
    }
+    
+   @Test
+   public void quesadillaDobleRegular(){
+       when(mockedQueso.isMelted()).thenReturn(true);
+       when(mockedTortilla.isToasted()).thenReturn(false);
+       when(mockedTortilla_2.isToasted()).thenReturn(false);
+       when(mockedTortilla.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+       when(mockedTortilla.getToastTemperature()).thenReturn(10);
+       when(mockedTortilla_2.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+       when(mockedTortilla_2.getToastTemperature()).thenReturn(10);
+       when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+       when(mockedQueso.getMeltingTemperature()).thenReturn(10);
+       assertEquals("Regular quesadilla",quesadilla.prepareDouble());
+       verify(mockedTortilla,times(1)).toast(true);
+       verify(mockedTortilla_2,times(1)).toast(true);
+       verify(mockedQueso,times(1)).melt(true);
+   }
 
    @Test
    public void quesadillaDobleMala(){
