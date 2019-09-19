@@ -9,14 +9,19 @@ public class QuesadillaTest {
     Quesadilla quesadilla;
     Queso mockedQueso;
     Tortilla mockedTortilla;
+    Tortilla[] mockedTortillas;
 
     @Before
     public void setUp() {
         quesadilla = new Quesadilla();
         mockedQueso = mock(Queso.class);
         mockedTortilla = mock(Tortilla.class);
+        mockedTortillas = new Tortilla[2];
+        mockedTortillas[0] = mock(Tortilla.class);
+        mockedTortillas[1] = mock(Tortilla.class);
         quesadilla.setQueso(mockedQueso);
         quesadilla.setTortilla(mockedTortilla);
+        quesadilla.setTortillas(mockedTortillas);
     }
 
     @Test
@@ -72,4 +77,107 @@ public class QuesadillaTest {
         verify(mockedTortilla, never()).toast(true);
         verify(mockedQueso, times(1)).melt(true);
     }
+
+    @Test
+    public void quesadillaDoblePerfecta() {
+        when(mockedQueso.isMelted()).thenReturn(true);
+        when(mockedTortillas[0].isToasted()).thenReturn(true);
+        when(mockedTortillas[1].isToasted()).thenReturn(true);
+        when(mockedTortillas[0].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[0].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedTortillas[1].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[1].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(10);
+        assertEquals("Quesadilla perfecta", quesadilla.prepareDouble());
+        verify(mockedTortillas[0], times(1)).toast(true);
+        verify(mockedTortillas[1], times(1)).toast(true);
+        verify(mockedQueso, times(1)).melt(true);
+    }
+
+    @Test
+    public void quesadillaDobleBuena() {
+        when(mockedQueso.isMelted()).thenReturn(true);
+        when(mockedTortillas[0].isToasted()).thenReturn(true);
+        when(mockedTortillas[1].isToasted()).thenReturn(false);
+        when(mockedTortillas[0].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[0].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedTortillas[1].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[1].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(10);
+        assertEquals("Quesadilla buena", quesadilla.prepareDouble());
+        verify(mockedTortillas[0], times(1)).toast(true);
+        verify(mockedTortillas[1], times(1)).toast(true);
+        verify(mockedQueso, times(1)).melt(true);
+    }
+
+    @Test
+    public void quesadillaDobleMala() {
+        when(mockedQueso.isMelted()).thenReturn(false);
+        when(mockedTortillas[0].isToasted()).thenReturn(true);
+        when(mockedTortillas[1].isToasted()).thenReturn(true);
+        when(mockedTortillas[0].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[0].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedTortillas[1].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[1].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(10);
+        assertEquals("Quesadilla mala", quesadilla.prepareDouble());
+        verify(mockedTortillas[0], times(1)).toast(true);
+        verify(mockedTortillas[1], times(1)).toast(true);
+        verify(mockedQueso, times(1)).melt(true);
+    }
+
+    @Test
+    public void quesadillaDobleTerrible() {
+        when(mockedQueso.isMelted()).thenReturn(false);
+        when(mockedTortillas[0].isToasted()).thenReturn(false);
+        when(mockedTortillas[1].isToasted()).thenReturn(true);
+        when(mockedTortillas[0].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[0].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedTortillas[1].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[1].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(10);
+        assertEquals("Quesadilla terrible", quesadilla.prepareDouble());
+        verify(mockedTortillas[0], times(1)).toast(true);
+        verify(mockedTortillas[1], times(1)).toast(true);
+        verify(mockedQueso, times(1)).melt(true);
+    }
+
+    @Test
+    public void quesadillaDobleNoSeCocino() {
+        when(mockedQueso.isMelted()).thenReturn(false);
+        when(mockedTortillas[0].isToasted()).thenReturn(false);
+        when(mockedTortillas[1].isToasted()).thenReturn(false);
+        when(mockedTortillas[0].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[0].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedTortillas[1].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[1].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(10);
+        assertEquals("No se cocinó", quesadilla.prepareDouble());
+        verify(mockedTortillas[0], times(1)).toast(true);
+        verify(mockedTortillas[1], times(1)).toast(true);
+        verify(mockedQueso, times(1)).melt(true);
+    }
+
+    @Test
+    public void quesadillaDobleRegular() {
+        when(mockedQueso.isMelted()).thenReturn(true);
+        when(mockedTortillas[0].isToasted()).thenReturn(false);
+        when(mockedTortillas[1].isToasted()).thenReturn(false);
+        when(mockedTortillas[0].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[0].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedTortillas[1].getToastTemperature()).thenReturn(10);
+        when(mockedTortillas[1].getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2, 8, 8, 8, 14);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(10);
+        assertEquals("Quesadilla regular", quesadilla.prepareDouble());
+        verify(mockedTortillas[0], times(1)).toast(true);
+        verify(mockedTortillas[1], times(1)).toast(true);
+        verify(mockedQueso, times(1)).melt(true);
+    }
+
 }
