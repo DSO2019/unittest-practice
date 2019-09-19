@@ -3,7 +3,7 @@ package mx.iteso.ut;
 public class TortillaMaiz implements Tortilla {
     boolean isToasted;
     int temperature;
-    int toasting = 35;
+    int toasting = 10;
     public boolean isToasted() {
         return this.isToasted;
     }
