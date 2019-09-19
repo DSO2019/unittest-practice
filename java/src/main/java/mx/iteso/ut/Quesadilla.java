@@ -9,6 +9,7 @@ public class Quesadilla
 {
     private Queso queso;
     private Tortilla tortilla;
+    private Tortilla tortilla2;
     private int heatLevel;
 
     public String prepareSingle(){
@@ -31,18 +32,89 @@ public class Quesadilla
          return "Terrible quesadilla";
      else
          return "You ran out of gas";
-
     }
 
     public String prepareDouble(){
-        // tortilla 1 tostada, tortilla 2 tostada, queso derretido
-        // tortilla 1 no tostada, tortilla 2 tostada, queso derretido
-        // tortilla 1 no tostada, tortilla 2 tostada, queso no derretido
-        // tortilla 1 no tostada, tortilla 2 no tostada, queso no derretido
-        // tortilla 1 no tostada, tortilla 2 no tostada, queso derretido
-        // tortilla 1 tostada, tortilla 2 tostada, queso no derretido
 
-        return "";
+        while
+                //Define temperatura de queso < melting
+        (getQueso().getCurrentTemperature() < getQueso().getMeltingTemperature() &&
+        //Define temperatura de tortilla < tostada
+        getTortilla().getCurrentTemperature() < getTortilla().getToastTemperature() &&
+                getTortilla2().getCurrentTemperature() < getTortilla2().getToastTemperature()
+        )
+
+        //Mientras el queso no se derrita ni la tortilla 1 se tueste y ni la tortilal 2 se tueste
+        {
+
+            getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
+            getTortilla2().setCurrentTemperature(getTortilla2().getCurrentTemperature() + getHeatLevel());
+            getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
+
+
+            if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
+                getTortilla().toast(true);
+
+            if (getTortilla2().getCurrentTemperature() >= getTortilla2().getToastTemperature())
+                getTortilla2().toast(true);
+
+            if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
+                getQueso().melt(true);
+        }
+        // tortilla 1 tostada
+        // tortilla 2 tostada
+        // queso derretido
+        //Añadir segunda tortilla tostada
+        if(getQueso().isMelted() && getTortilla().isToasted()  && getTortilla().isToasted()
+                && getTortilla2().isToasted())
+            return "Perfect quesadilla";
+
+        // tortilla 1 no tostada
+        // tortilla 2 tostada
+        // queso derretido
+        //Falta checar que una segunda quesadilla no este tostada
+        if(getQueso().isMelted() && !getTortilla().isToasted()  && getTortilla2().isToasted() )
+            return "Quesadilla Buena";
+
+        // tortilla 1 tostada
+        // tortilla 2 no tostada
+        // queso derretido
+        //Falta checar que una segunda quesadilla no este tostada
+        if(getQueso().isMelted() && getTortilla().isToasted() && !getTortilla2().isToasted() )
+            return "Quesadilla Buena";
+
+        // tortilla 1 no tostada
+        // tortilla 2 tostada
+        // queso no derretido
+
+        if(getQueso().isMelted() && !getTortilla().isToasted() && getTortilla2().isToasted())
+            return "Quesadilla terribe";
+
+        // tortilla 1 tostada
+        // tortilla 2 no tostada
+        // queso no derretido
+
+        if(getQueso().isMelted() && getTortilla().isToasted() && !getTortilla2().isToasted())
+            return "Quesadilla terribe";
+
+            // tortilla 1 no tostada
+            // tortilla 2 no tostada
+            // queso derretido
+        if(getQueso().isMelted() && !getTortilla().isToasted() && !getTortilla2().isToasted())
+            return "Quesadilla regular";
+
+            // tortilla 1 tostada
+            // tortilla 2 tostada
+            // queso no derretido
+        if(getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted())
+                return "Quesadilla Mala";
+
+            // tortilla 1 no tostada
+            // tortilla 2 no tostada
+            // queso no derretido
+
+        else
+            return "You ran out of gas";
     }
 
     public Queso getQueso() {
@@ -68,5 +140,13 @@ public class Quesadilla
 
     public void setHeatLevel(int heatLevel) {
         this.heatLevel = heatLevel;
+    }
+
+    public Tortilla getTortilla2() {
+        return tortilla2;
+    }
+
+    public void setTortilla2(Tortilla tortilla) {
+        this.tortilla2 = tortilla;
     }
 }
