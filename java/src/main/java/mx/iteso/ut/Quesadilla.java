@@ -5,7 +5,7 @@ package mx.iteso.ut;
  *
  */
 public class Quesadilla
-{
+ {
     private Queso queso;
     private Tortilla tortilla;
     private Tortilla tortilla2;
@@ -67,6 +67,8 @@ public class Quesadilla
             return "Terrible quesadilla";
         else if(!getQueso().isMelted() && !tortilla.isToasted()  && !tortilla2.isToasted())
             return "No se cocino";
+        else if(getQueso().isMelted() && !tortilla.isToasted()  && !tortilla2.isToasted())
+            return "Regular quesadilla";
         else
             return "You ran out of gas";
     }
