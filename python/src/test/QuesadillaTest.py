@@ -1,9 +1,8 @@
-from mockito import mock, verify, when
-import unittest
-
 from Queso import *
 from Tortilla import *
 from Quesadilla import *
+from mockito import mock, verify, when
+import unittest
 
 class QuesadillaTest(unittest.TestCase):
     def setUp(self):
@@ -13,7 +12,7 @@ class QuesadillaTest(unittest.TestCase):
         self.quesadilla.setQueso(self.mockedQueso)
         self.quesadilla.setTortilla(self.mockedTortilla)
 
-    def test_quesadillaPerfecta(self):
+    def testquesadillaPerfecta(self):
         when(self.mockedQueso).isMelted().thenReturn(True)
         when(self.mockedTortilla).isToasted().thenReturn(True)
         when(self.mockedTortilla).getCurrentTemperature().thenReturn(2, 8, 8, 8, 14)
@@ -24,7 +23,7 @@ class QuesadillaTest(unittest.TestCase):
         verify(self.mockedTortilla, times=1).toast(True)
         verify(self.mockedQueso, times=1).melt(True)
 
-    def test_quesadillaBuena(self):
+    def testquesadillaBuena(self):
         when(self.mockedQueso).isMelted().thenReturn(True)
         when(self.mockedTortilla).isToasted().thenReturn(False)
         when(self.mockedTortilla).getCurrentTemperature().thenReturn(2, 8, 8, 8, 14)
@@ -35,7 +34,7 @@ class QuesadillaTest(unittest.TestCase):
         verify(self.mockedTortilla, times=0).toast(True)
         verify(self.mockedQueso, times=1).melt(True)
 
-    def test_quesadillaTerrible(self):
+    def testquesadillaTerrible(self):
         when(self.mockedQueso).isMelted().thenReturn(False)
         when(self.mockedTortilla).isToasted().thenReturn(True)
         when(self.mockedTortilla).getCurrentTemperature().thenReturn(2, 8, 8, 8, 14)
@@ -46,7 +45,7 @@ class QuesadillaTest(unittest.TestCase):
         verify(self.mockedTortilla, times=0).toast(True)
         verify(self.mockedQueso, times=1).melt(True)
 
-    def test_noHayGas(self):
+    def testnoHayGas(self):
         when(self.mockedQueso).isMelted().thenReturn(False)
         when(self.mockedTortilla).isToasted().thenReturn(False)
         when(self.mockedTortilla).getCurrentTemperature().thenReturn(2, 8, 8, 8, 14)

@@ -1,26 +1,25 @@
-from QuesoChihuahua import *
 import unittest
-
+from QuesoChihuahua import *
 
 class QuesoChihuahuaTest(unittest.TestCase):
     def setUp(self):
         self.quesoChihuahua = QuesoChihuahua()
 
-    def test_CurrentTemperature(self):
+    def testCurrentTemperature(self):
         self.quesoChihuahua.setCurrentTemperature(21)
         self.assertEqual(21, self.quesoChihuahua.getCurrentTemperature())
 
-    def test_CurrentTemperature(self):
+    def testCurrentTemperature(self):
         self.quesoChihuahua.setCurrentTemperature(21)
         self.assertEqual(21, self.quesoChihuahua.getCurrentTemperature())
 
-    def test_FalseMelt(self):
+    def testFalseMelt(self):
         self.quesoChihuahua.melt(False)
         self.assertFalse(self.quesoChihuahua.isMelted())
 
-    def test_TrueMelt(self):
+    def testTrueMelt(self):
         self.quesoChihuahua.melt(True)
         self.assertTrue(self.quesoChihuahua.isMelted())
 
-    def test_Melting(self):
+    def testMelting(self):
         self.assertEqual(20, self.quesoChihuahua.getMeltingTemperature())

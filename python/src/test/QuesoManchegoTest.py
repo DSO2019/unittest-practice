@@ -1,26 +1,25 @@
-from QuesoManchego import *
 import unittest
-
+from QuesoManchego import *
 
 class QuesoManchegoTest(unittest.TestCase):
     def setUp(self):
         self.quesoManchego = QuesoManchego()
 
-    def test_CurrentTemperature(self):
+    def testCurrentTemperature(self):
         self.quesoManchego.setCurrentTemperature(21)
         self.assertEqual(21, self.quesoManchego.getCurrentTemperature())
 
-    def test_CurrentTemperature(self):
+    def testCurrentTemperature(self):
         self.quesoManchego.setCurrentTemperature(21)
         self.assertEqual(21, self.quesoManchego.getCurrentTemperature())
 
-    def test_FalseMelt(self):
+    def testFalseMelt(self):
         self.quesoManchego.melt(False)
         self.assertFalse(self.quesoManchego.isMelted())
 
-    def test_TrueMelt(self):
+    def testTrueMelt(self):
         self.quesoManchego.melt(True)
         self.assertTrue(self.quesoManchego.isMelted())
 
-    def test_Melting(self):
+    def testMelting(self):
         self.assertEqual(20, self.quesoManchego.getMeltingTemperature())

@@ -1,21 +1,21 @@
-from TortillaHarina import *
 import unittest
+from TortillaHarina import *
 
 class TortillaHarinaTest(unittest.TestCase):
     def setUp(self):
         self.tortillaHarina = TortillaHarina()
 
-    def test_CurrentTemperature(self):
+    def testCurrentTemperature(self):
         self.tortillaHarina.setCurrentTemperature(21)
         self.assertEqual(21,self.tortillaHarina.getCurrentTemperature())
 
-    def test_FalseToast(self):
+    def testFalseToast(self):
         self.tortillaHarina.toast(False)
         self.assertFalse(self.tortillaHarina.isToasted())
 
-    def test_TrueToast(self):
+    def testTrueToast(self):
         self.tortillaHarina.toast(True)
         self.assertTrue(self.tortillaHarina.isToasted())
 
-    def test_Toasting(self):
+    def testToasting(self):
         self.assertEqual(10,self.tortillaHarina.getToastTemperature())
