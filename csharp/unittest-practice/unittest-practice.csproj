@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,7 +7,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>unittestpractice</RootNamespace>
     <AssemblyName>unittest-practice</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,7 +32,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
+    <Compile Include="Clases\Quesadilla.cs" />
+    <Compile Include="Clases\QuesoChihuahua.cs" />
+    <Compile Include="Clases\TortillaHarina.cs" />
+    <Compile Include="Clases\TortillaMaiz.cs" />
+    <Compile Include="Interfaces.cs" />
+    <Compile Include="Clases\QuesoManchego.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
