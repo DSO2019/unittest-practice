@@ -33,6 +33,7 @@ public class TortillaMaizTest {
 
     @Test
     public void TestToasting(){
-        assertEquals(25, tortillaMaiz.getToastTemperature());
+
+        assertEquals(10, tortillaMaiz.getToastTemperature());
     }
 }

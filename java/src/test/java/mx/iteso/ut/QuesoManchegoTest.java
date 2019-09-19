@@ -16,7 +16,7 @@ public class QuesoManchegoTest {
 
     @Test
     public void testCurrentTemperature(){
-        quesoManchego.setCurrentTemperature(25);
+        quesoManchego.setCurrentTemperature(21);
         assertEquals(21,quesoManchego.getCurrentTemperature());
     }
     @Test

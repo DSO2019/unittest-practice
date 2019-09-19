@@ -95,24 +95,6 @@ public class QuesadillaTest
    }
 
     @Test
-    public void quesadillaDobleBuena()
-    {
-        when(mockedQueso.isMelted()).thenReturn(true);
-        when(mockedTortilla.isToasted()).thenReturn(true);
-        when(mockedTortilla1.isToasted()).thenReturn(false);
-        when(mockedTortilla.getCurrentTemperature()).thenReturn(2,8,8,8,14);
-        when(mockedTortilla.getToastTemperature()).thenReturn(10);
-        when(mockedTortilla1.getCurrentTemperature()).thenReturn(2,8,8,8,14);
-        when(mockedTortilla1.getToastTemperature()).thenReturn(20);
-        when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,8,8,14);
-        when(mockedQueso.getMeltingTemperature()).thenReturn(10);
-        assertEquals("Good quesadilla",quesadilla.prepareDouble());
-        verify(mockedTortilla,times(1)).toast(true);
-        verify(mockedTortilla1,times(1)).toast(false);
-        verify(mockedQueso,times(1)).melt(true);
-    }
-
-    @Test
     public void quesadillaDobleBuenaTest()
     {
         when(mockedQueso.isMelted()).thenReturn(true);
@@ -166,4 +148,21 @@ public class QuesadillaTest
         verify(mockedQueso,never()).melt(true);
     }
 
+    @Test
+    public void quesadillaDobleSinGasTest()
+    {
+        when(mockedQueso.isMelted()).thenReturn(false);
+        when(mockedTortilla.isToasted()).thenReturn(false);
+        when(mockedTortilla1.isToasted()).thenReturn(false);
+        when(mockedTortilla.getCurrentTemperature()).thenReturn(2,8,8,8,15);
+        when(mockedTortilla.getToastTemperature()).thenReturn(10);
+        when(mockedTortilla1.getCurrentTemperature()).thenReturn(2,8,8,8,15);
+        when(mockedTortilla1.getToastTemperature()).thenReturn(10);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,8,8,15);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(10);
+        assertEquals("You ran out of gas",quesadilla.prepareDouble());
+        verify(mockedTortilla,never()).toast(false);
+        verify(mockedTortilla1, never()).toast(false);
+        verify(mockedQueso,never()).melt(false);
+    }
 }
