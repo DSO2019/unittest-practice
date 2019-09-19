@@ -1,19 +1,8 @@
-class TortillaMaiz:
-    toasted
-    temperature
-    toasting = 20
+from Tortilla import Tortilla
 
-    def isToasted():
-        return self.toasted
+class TortillaMaiz(Tortilla):
 
-    def getCurrentTemperature():
-        return self.temperature
-
-    def getToastTemperature():
-        return self.toasting
-    
-    def setCurrentTemperature(temp):
-        self.temperature = temp
-
-    def toast(toasted):
-        self.toasted = toasted
+    def __init__(self, toast=None, temperature=None, toasting=20):
+        self.toasted = toast
+        self.temperature = temperature
+        self.toasting = toasting
