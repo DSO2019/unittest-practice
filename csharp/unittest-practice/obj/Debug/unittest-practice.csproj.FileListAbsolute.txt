@@ -1,0 +1,9 @@
+C:\Users\Felipe\Documents\ITESO\13\SD\unittest-practice\csharp\unittest-practice\bin\Debug\unittest-practice.dll
+C:\Users\Felipe\Documents\ITESO\13\SD\unittest-practice\csharp\unittest-practice\bin\Debug\unittest-practice.pdb
+C:\Users\Felipe\Documents\ITESO\13\SD\unittest-practice\csharp\unittest-practice\bin\Debug\nunit.framework.dll
+C:\Users\Felipe\Documents\ITESO\13\SD\unittest-practice\csharp\unittest-practice\bin\Debug\nunit.framework.xml
+C:\Users\Felipe\Documents\ITESO\13\SD\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.csprojAssemblyReference.cache
+C:\Users\Felipe\Documents\ITESO\13\SD\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.csproj.CoreCompileInputs.cache
+C:\Users\Felipe\Documents\ITESO\13\SD\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.csproj.CopyComplete
+C:\Users\Felipe\Documents\ITESO\13\SD\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.dll
+C:\Users\Felipe\Documents\ITESO\13\SD\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.pdb
