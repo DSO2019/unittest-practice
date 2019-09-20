@@ -1,29 +1,40 @@
 package mx.iteso.ut;
 
+/** Clase queso chihuahua. */
 public class QuesoChihuahua implements Queso {
 
-    boolean melted;
-    int temperature;
-    int melting = 20;
+    /** Estado del queso. */
+    private boolean melted;
 
-    public boolean isMelted() {
+    /** Temperatura. */
+    private int temperature;
+
+    /** Temperatura para derrotar. */
+    static final int MELTING = 20;
+
+    /** {@inheritDoc} */
+    public final boolean isMelted() {
         return this.melted;
     }
 
-    public int getCurrentTemperature() {
+    /** {@inheritDoc} */
+    public final int getCurrentTemperature() {
         return this.temperature;
     }
 
-    public int getMeltingTemperature() {
-        return this.melting;
+    /** {@inheritDoc} */
+    public final int getMeltingTemperature() {
+        return this.MELTING;
     }
 
-    public void setCurrentTemperature(int temp) {
+    /** {@inheritDoc} */
+    public final void setCurrentTemperature(final int temp) {
         this.temperature = temp;
     }
 
-    public void melt(boolean melted) {
-        this.melted = melted;
+    /** {@inheritDoc} */
+    public final void melt(final boolean meltedSet) {
+        this.melted = meltedSet;
 
     }
 }
