@@ -1,5 +1,6 @@
 from Tortilla import Tortilla
 
+
 class TortillaHarina(Tortilla):
 
     def __init__(self, toast=None, temperature=None, toasting=20):
