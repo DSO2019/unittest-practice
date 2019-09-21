@@ -32,7 +32,7 @@ public class TortillaHarinaTest {
 
     @Test
     public void TestToasting(){
-        assertEquals(14, tortillaHarina.getToastTemperature());
+        assertEquals(10, tortillaHarina.getToastTemperature());
     }
 }
 
