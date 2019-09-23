@@ -1,10 +1,35 @@
 package mx.iteso.ut;
 
+/**
+* Interface for any kind of queso.
+*/
 public interface Tortilla {
-    public boolean isToasted();
-    public int getToastTemperature();
-    public int getCurrentTemperature();
-    public void setCurrentTemperature(int temp);
-    public void toast(boolean toasted);
+    /**
+    * Returns the current toasting status.
+    * @return toasting status.
+    */
+    boolean isToasted();
+
+    /**
+    * Returns the toasting temperature.
+    * @return toasting temperature.
+    */
+    int getToastTemperature();
+    /**
+    * Returns the current temperature.
+    * @return current temperature
+    */
+    int getCurrentTemperature();
+    /**
+    * Sets the current temperature.
+    * @param temp temperature selected.
+    */
+    void setCurrentTemperature(int temp);
+
+    /**
+    * Sets tortilla toasting status.
+    * @param toasted tortilla status.
+    */
+    void toast(boolean toasted);
 
 }

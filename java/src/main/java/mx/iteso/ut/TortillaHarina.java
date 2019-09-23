@@ -1,27 +1,62 @@
 package mx.iteso.ut;
 
+/**
+* Implementation class TortillaMaiz for Tortilla interface.
+*/
 public class TortillaHarina implements Tortilla {
-    boolean toasted;
-    int toastTemperature = 30;
-    int temperature;
+    /**
+    * Constant defined for toasting temperature.
+    */
+    static final int TOASTING_TEMPERATURE = 30;
+    /**
+    * Variable used to set the toasting status.
+    */
+    private boolean toasted;
+    /**
+    * Tortilla toasting temperature.
+    */
+    private int toastTemperature = TOASTING_TEMPERATURE;
+    /**
+    * Current temperature.
+    */
+    private int temperature;
 
-    public boolean isToasted() {
+    /**
+    * Returns the toasted status.
+    * @return toasted.
+    */
+    public static boolean isToasted() {
         return toasted;
     }
 
-    public int getToastTemperature() {
+    /**
+    * Returns toasting temperature.
+    * @return toastTemperature.
+    */
+    public static int getToastTemperature() {
         return toastTemperature;
     }
 
-    public int getCurrentTemperature() {
+    /**
+    * Getter for current temperature.
+    * @return currentTemperature.
+    */
+    public static int getCurrentTemperature() {
         return temperature;
     }
-
-    public void setCurrentTemperature(int temp) {
+    /**
+    * Setter for current temperature.
+    * @param temp current temperature.
+    */
+    public static void setCurrentTemperature(final int temp) {
         this.temperature = temp;
     }
 
-    public void toast(boolean toasted) {
+    /**
+    * Setter for toeasted.
+    * @param toasted status.
+    */
+    public static void toast(final boolean toasted) {
         this.toasted = toasted;
     }
 }
