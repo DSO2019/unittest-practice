@@ -43,7 +43,8 @@ if py2:
 
 def install_pyb():
     try:
-        subprocess.check_call([sys.executable, "-m", "pip.__main__", "install", "pybuilder"])
+        subprocess.check_call(
+            [sys.executable, "-m", "pip.__main__", "install", "pybuilder"])
     except subprocess.CalledProcessError as e:
         sys.exit(e.returncode)
 
@@ -65,7 +66,8 @@ except subprocess.CalledProcessError as e:
         sys.exit(e.returncode)
 
 try:
-    subprocess.check_call(["pyb", "clean", "install_build_dependencies", "package", "-o"])
+    subprocess.check_call(
+        ["pyb", "clean", "install_build_dependencies", "package", "-o"])
     dist_dir = glob.glob(os.path.join(script_dir, "target", "dist", "*"))[0]
     for src_file in glob.glob(os.path.join(dist_dir, "*")):
         file_name = os.path.basename(src_file)
@@ -77,7 +79,8 @@ try:
                 os.remove(target_file_name)
         shutil.move(src_file, script_dir)
     setup_args = sys.argv[1:]
-    subprocess.check_call([sys.executable, "setup.py"] + setup_args, cwd=script_dir)
+    subprocess.check_call([sys.executable, "setup.py"] +
+                          setup_args, cwd=script_dir)
 except subprocess.CalledProcessError as e:
     exit_code = e.returncode
 sys.exit(exit_code)

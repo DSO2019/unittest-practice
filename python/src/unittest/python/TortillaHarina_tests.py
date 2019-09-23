@@ -1,6 +1,7 @@
 from ...main.python import TortillaHarina
-from mockito import when, mock, verify,assertEquals,assertFalse,assertTrue
+from mockito import when, mock, verify, assertEquals, assertFalse, assertTrue
 import unittest
+
 
 class TortillaHarinaTest(unittest.TestCase):
     def __init__(self):
@@ -8,7 +9,7 @@ class TortillaHarinaTest(unittest.TestCase):
 
     def testCurrentTemperature(self):
         self.tortillaHarina.setCurrentTemperature(31)
-        assertEquals(31,self.tortillaHarina.getCurrentTemperature())
+        assertEquals(31, self.tortillaHarina.getCurrentTemperature())
 
     def testFalseToast(self):
         self.tortillaHarina.toast(False)
@@ -19,4 +20,4 @@ class TortillaHarinaTest(unittest.TestCase):
         assertTrue(self.tortillaHarina.isToasted())
 
     def testToasting(self):
-        assertEquals(30,self.tortillaHarina.getToastTemperature())
+        assertEquals(30, self.tortillaHarina.getToastTemperature())
