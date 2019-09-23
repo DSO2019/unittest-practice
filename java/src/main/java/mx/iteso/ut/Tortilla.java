@@ -6,6 +6,10 @@ package mx.iteso.ut;
 * @author  Gustavo Rueda
 */
 public interface Tortilla {
+
+    /**Melting temperature.*/
+    int TOASTING_TEMPERATURE = 20;
+
     /**
     * Returns a boolean value that
     * represents if the tortilla is toasted.

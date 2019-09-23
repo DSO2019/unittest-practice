@@ -12,7 +12,7 @@ public class QuesoChihuahua implements Queso {
     /**Integer that represents the cheese's temperature.*/
     private int temperature;
     /**Integer that represents the cheese's melting temperature.*/
-    private int melting = 20;
+    private int melting = MELTING_TEMPERATURE;
 
     /**
     * Returns a boolean value that
@@ -49,9 +49,9 @@ public class QuesoChihuahua implements Queso {
 
     /**
     * Sets the cheese's melted boolean value.
-    * @param melted the desired boolean value.
+    * @param m the desired boolean value.
     */
-    public void melt(final boolean melted) {
-        this.melted = melted;
+    public void melt(final boolean m) {
+        this.melted = m;
     }
 }

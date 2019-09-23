@@ -6,6 +6,10 @@ package mx.iteso.ut;
 * @author  Gustavo Rueda
 */
 public interface Queso {
+
+    /**Melting temperature.*/
+    int MELTING_TEMPERATURE = 20;
+
     /**
     * Returns a boolean value that
     * represents if the cheese is melted.

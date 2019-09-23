@@ -5,7 +5,7 @@ package mx.iteso.ut;
 * and attributes related to Quesadilla.
 * @author  Gustavo Rueda
 */
-final public class Quesadilla {
+public final class Quesadilla {
 
     /** Cheese that the quesadilla will use.*/
     private Queso queso;
@@ -88,35 +88,67 @@ final public class Quesadilla {
         }
     }
 
+    /**
+    * Gets the cheese.
+    * @return The cheese.
+    */
     public Queso getQueso() {
         return queso;
     }
 
-    public void setQueso(final Queso queso) {
-        this.queso = queso;
+    /**
+    * Sets the cheese.
+    * @param c The cheese.
+    */
+    public void setQueso(final Queso c) {
+        this.queso = c;
     }
 
+    /**
+    * Gets the first tortilla.
+    * @return The first tortilla.
+    */
     public Tortilla getTortilla() {
         return tortilla;
     }
 
-    public void setTortilla(final Tortilla tortilla) {
-        this.tortilla = tortilla;
+    /**
+    * Sets the first tortilla.
+    * @param t The first tortilla.
+    */
+    public void setTortilla(final Tortilla t) {
+        this.tortilla = t;
     }
 
+    /**
+    * Gets the second tortilla.
+    * @return The second tortilla.
+    */
     public Tortilla getTortilla2() {
         return tortilla2;
     }
 
-    public void setTortilla2(final Tortilla tortilla) {
-        this.tortilla2 = tortilla;
+    /**
+    * Sets the second tortilla.
+    * @param t The second tortilla.
+    */
+    public void setTortilla2(final Tortilla t) {
+        this.tortilla2 = t;
     }
 
+    /**
+    * Gets the heat level.
+    * @return The heat level.
+    */
     public int getHeatLevel() {
         return heatLevel;
     }
 
-    public void setHeatLevel(final int heatLevel) {
-        this.heatLevel = heatLevel;
+    /**
+    * Sets the heat level.
+    * @param h The heat level.
+    */
+    public void setHeatLevel(final int h) {
+        this.heatLevel = h;
     }
 }

@@ -13,7 +13,7 @@ public class TortillaMaiz implements Tortilla {
     /**Integer that represents the tortilla's temperature.*/
     private int temperature;
     /**Integer that represents the tortilla's toasting temperature.*/
-    private int toasting = 20;
+    private int toasting = TOASTING_TEMPERATURE;
 
     /**
     * Returns a boolean value that

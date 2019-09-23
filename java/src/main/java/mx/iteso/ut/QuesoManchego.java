@@ -7,12 +7,13 @@ package mx.iteso.ut;
 */
 public class QuesoManchego implements Queso {
 
+
     /**Boolean that represents if the cheese if melted.*/
     private boolean melted;
     /**Integer that represents the cheese's temperature.*/
     private int temperature;
     /**Integer that represents the cheese's melting temperature.*/
-    private int melting = 20;
+    private int melting = MELTING_TEMPERATURE;
 
     /**
     * Returns a boolean value that
@@ -49,9 +50,9 @@ public class QuesoManchego implements Queso {
 
     /**
     * Sets the cheese's melted boolean value.
-    * @param melted the desired boolean value.
+    * @param m the desired boolean value.
     */
-    public void melt(final boolean melted) {
-        this.melted = melted;
+    public void melt(final boolean m) {
+        this.melted = m;
     }
 }
