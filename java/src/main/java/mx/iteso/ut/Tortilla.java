@@ -1,14 +1,33 @@
 package mx.iteso.ut;
 
+/**
+ * <b>Tortilla</b>.
+ * @see Annotations
+ */
 public interface Tortilla {
-    public boolean isToasted();
+    /**
+     * @return toasted.
+     */
+    boolean isToasted();
 
-    public int getToastTemperature();
+    /**
+     * @return toasting.
+     */
+    int getToastTemperature();
 
-    public int getCurrentTemperature();
+    /**
+     * @return temperature.
+     */
+    int getCurrentTemperature();
 
-    public void setCurrentTemperature(int temp);
+    /**
+     * @param temp temp.
+     */
+    void setCurrentTemperature(int temp);
 
-    public void toast(boolean toasted);
+    /**
+     * @param toasted toasted.
+     */
+    void toast(boolean toasted);
 
 }

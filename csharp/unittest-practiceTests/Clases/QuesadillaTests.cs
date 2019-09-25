@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 namespace unittestpractice.Clases.Tests
 {
@@ -6,8 +7,8 @@ namespace unittestpractice.Clases.Tests
     public class QuesadillaTests
     {
         Quesadilla quesadilla;
-        Mock mockedQueso;
-        Mock mockedTortilla;
+        Mock<Queso> mockedQueso;
+        Mock<Tortilla> mockedTortilla;
         //TODO ARTURO
         //Asserts
         [TestInitialize]
@@ -15,13 +16,19 @@ namespace unittestpractice.Clases.Tests
         {
             quesadilla = new Quesadilla();
             mockedQueso = new Mock<Queso>();
+            mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(15);
+            mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(10);
             mockedTortilla = new Mock<Tortilla>();
+            quesadilla.setQueso(mockedQueso.Object);
+            quesadilla.setTortilla(mockedTortilla.Object);
+            quesadilla.setHeatLevel(10);
         }
 
         [TestMethod()]
         public void quesadillaPerfecta()
         {
-            Assert.Fail();
+            
+            Assert.AreEqual("Perfect quesadilla", quesadilla.prepareSingle());
         }
 
         [TestMethod()]

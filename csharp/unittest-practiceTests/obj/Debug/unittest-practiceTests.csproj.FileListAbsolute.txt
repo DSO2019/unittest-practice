@@ -137,3 +137,7 @@ C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\b
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\bin\Debug\Moq.xml
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\bin\Debug\unittest-practiceTests.dll.config
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\bin\Debug\nunit.framework.dll
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\bin\Debug\nunit.framework.pdb
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\bin\Debug\nunit.framework.xml
