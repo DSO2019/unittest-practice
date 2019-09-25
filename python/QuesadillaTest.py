@@ -19,9 +19,9 @@ class QuesadillaTest(unittest.TestCase):
 		when(mockedQueso).getCurrentTemperature().thenReturn(2,8,8,14)
 		when(mockedQueso).getMeltingTemperature().thenReturn(10)
 		assertEquals('Perfect quesadilla', self.quesadilla.prepareSingle())
-      #  verify(mockedQueso, times=1).melt(True)
-       # verify(mockedTortilla, times=1).toast(True)
+      # verify(mockedQueso, times=1).melt(True)
 
 
     def testQuesadillaBuena(self):
+		print("f")
 

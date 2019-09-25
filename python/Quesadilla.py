@@ -55,4 +55,42 @@ class Quesadilla:
 		if(not self.getQueso().isMelted() and not self.getTortilla().isToasted()):
 			return 'You ran out of gas'
 
+	def prepareDouble(self):
+		while (self.getQueso().getCurrentTemperature() < self.getQueso().getMeltingTemperature()
+			   and self.getTortilla().getCurrentTemperature() < self.getTortilla().getToastTemperature()):
+			self.getQueso().setCurrentTemperature(self.getQueso().getCurrentTemperature() + self.getHeatLevel())
+			if (self.getTortilla().getCurrentTemperature() >= self.getTortilla().getToastTemperature()):
+				self.getTortilla().toast(True)
+
+			if(self.getQueso().getCurrentTemperature() >= self.getQueso().getMeltingTemperature()):
+				self.getQueso().melt(True)
+
+		while (self.getQueso().getCurrentTemperature() < self.getQueso().getMeltingTemperature()
+			   and self.getTortilla2().getCurrentTemperature() < self.getTortilla2().getToastTemperature()):
+			self.getQueso().setCurrentTemperature(self.getQueso().getCurrentTemperature() + self.getHeatLevel())
+
+			if (self.getTortilla2().getCurrentTemperature() >= self.getTortilla2().getToastTemperature()):
+				self.getTortilla2().toast(True)
+			if(self.getQueso().getCurrentTemperature() >= self.getQueso().getMeltingTemperature()):
+				self.getQueso().melt(True)
+
+		if (self.getTortilla().isToasted() and self.getTortilla2().isToasted() and self.getQueso().isMelted()):
+			return 'Perfect quesadilla'
+
+		if (((not self.getTortilla().getCurrentTemperature()) and self.getTortilla2().getCurrentTemperature())
+			or (self.getTortilla().getCurrentTemperature() and not (self.getTortilla2().getCurrentTemperature()))
+			and self.getQueso().isMelted()):
+			return 'Good quesadilla'
+
+		if (self.getTortilla().isToasted() and self.getTortilla2().isToasted() and not (self.getQueso().isMelted())):
+			return 'Bad quesadilla'
+
+		if (not (self.getTortilla().isToasted()) and not (self.getTortilla2().isToasted()) and not (self.getQueso().isMelted())):
+			return 'You ran out of gas'
+
+		if (((not self.getTortilla().getCurrentTemperature()) and self.getTortilla2().getCurrentTemperature())
+				or (self.getTortilla().getCurrentTemperature() and not (self.getTortilla2().getCurrentTemperature()))
+				and not self.getQueso().isMelted()):
+			return 'Terrible quesadilla'
+
 
