@@ -3,8 +3,7 @@ package mx.iteso.ut;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 public class TortillaHarinaTest {
     TortillaHarina tortillaHarina;
@@ -17,7 +16,7 @@ public class TortillaHarinaTest {
     @Test
     public void testCurrentTemperature(){
         tortillaHarina.setCurrentTemperature(21);
-        assertEquals(0, tortillaHarina.getCurrentTemperature());
+        assertEquals(21, tortillaHarina.getCurrentTemperature());
     }
     @Test
     public void testFalseMelt(){
@@ -27,11 +26,11 @@ public class TortillaHarinaTest {
     @Test
     public void testTrueMelt(){
         tortillaHarina.toast(true);
-        assertFalse(tortillaHarina.isToasted());
+        assertTrue(tortillaHarina.isToasted());
     }
     @Test
     public void testMelting(){
-        assertEquals(0, tortillaHarina.getToastTemperature());
+        assertEquals(21, tortillaHarina.getToastTemperature());
     }
 
 }

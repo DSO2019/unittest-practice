@@ -2,14 +2,14 @@ package mx.iteso.ut;
 
 /**Clase Tortilla Harina implementa la interfaz Tortilla.*/
 public class TortillaHarina implements Tortilla {
-    /**Determina si la tortilla esta tostada.*/
+    /**si la tortilla esta tostada.*/
     private boolean toasted;
 
-    /**Temperatura actual de la tortilla.*/
+    /**Temperatura de la tortilla.*/
     private int temperature;
 
     /**Temperatura a la que se tosta la tortilla.*/
-    private final int toast = 15;
+    private final int toast = 21;
 
     /**@return si la tortilla esta tostada.*/
     public boolean isToasted() {
