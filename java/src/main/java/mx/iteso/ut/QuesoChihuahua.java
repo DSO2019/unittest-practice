@@ -1,28 +1,39 @@
 package mx.iteso.ut;
 
+/**Clase Queso Manchego implementa la interfaz Queso.*/
 public class QuesoChihuahua implements Queso {
 
-    boolean melted;
-    int temperature;
-    int melting = 20;
+    /** Determina si el queso esta derretido.*/
+    private boolean melted;
 
+    /** Temperatura actual del queso.*/
+    private int temperature;
+
+    /** Temperatura a la que se derrite el queso.*/
+    private final int melting = 20;
+
+    /**@return si el queso esta derretido.*/
     public boolean isMelted() {
         return this.melted;
     }
 
+    /**@return la temperatura actual del queso.*/
     public int getCurrentTemperature() {
         return this.temperature;
     }
 
+    /**@return la temperatura en que se derrite el queso.*/
     public int getMeltingTemperature() {
         return this.melting;
     }
 
-    public void setCurrentTemperature(int temp) {
+    /**@param temp temperatura actual.*/
+    public void setCurrentTemperature(final int temp) {
         this.temperature = temp;
     }
 
-    public void melt(boolean melted) {
-        this.melted = melted;
+    /**@param pMelted si el queso esta derretido.*/
+    public void melt(final boolean pMelted) {
+        this.melted = pMelted;
     }
 }
