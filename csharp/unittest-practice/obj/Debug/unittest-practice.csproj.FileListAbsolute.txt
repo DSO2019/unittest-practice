@@ -12,7 +12,6 @@ C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\bin\De
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\bin\Debug\nunit.framework.dll
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\bin\Debug\nunit.framework.xml
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.csprojAssemblyReference.cache
-C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.csproj.CoreCompileInputs.cache
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.csproj.CopyComplete
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.dll
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.pdb

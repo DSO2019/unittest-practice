@@ -29,7 +29,6 @@ C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\b
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\obj\Debug\unittest-practiceTests.csprojAssemblyReference.cache
-C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\obj\Debug\unittest-practiceTests.csproj.CoreCompileInputs.cache
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\obj\Debug\unittest-practiceTests.csproj.CopyComplete
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\obj\Debug\unittest-practiceTests.dll
 C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practiceTests\obj\Debug\unittest-practiceTests.pdb
