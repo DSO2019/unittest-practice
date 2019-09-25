@@ -94,8 +94,7 @@ public class QuesadillaTest
        verify(mockedTortilla1,times(1)).toast(true);
        verify(mockedQueso,times(1)).melt(true);
    }
-
-    @Test
+   @Test
     public void quesadillaDobleBuenaTest()
     {
         when(mockedQueso.isMelted()).thenReturn(true);
@@ -112,8 +111,7 @@ public class QuesadillaTest
         verify(mockedTortilla1, never()).toast(true);
         verify(mockedQueso,times(1)).melt(true);
     }
-
-    @Test
+   @Test
     public void quesadillaDobleMalaTest()
     {
         when(mockedQueso.isMelted()).thenReturn(false);
@@ -130,8 +128,7 @@ public class QuesadillaTest
         verify(mockedTortilla1, times(1)).toast(true);
         verify(mockedQueso,never()).melt(true);
     }
-
-    @Test
+   @Test
     public void quesadillaDobleTerribleTest()
     {
         when(mockedQueso.isMelted()).thenReturn(false);
@@ -148,8 +145,7 @@ public class QuesadillaTest
         verify(mockedTortilla1, times(1)).toast(true);
         verify(mockedQueso,never()).melt(true);
     }
-
-    @Test
+   @Test
     public void quesadillaDobleSinGasTest()
     {
         when(mockedQueso.isMelted()).thenReturn(false);
