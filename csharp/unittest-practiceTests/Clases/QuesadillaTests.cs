@@ -62,7 +62,7 @@ namespace unittest_practiceTests.Clases
             Assert.AreEqual("Terrible quesadilla", _quesadilla.prepareSingle());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void noHayGas()
         {
             _mockedQueso.Setup(foo => foo.isMelted()).Returns(false);
@@ -74,7 +74,7 @@ namespace unittest_practiceTests.Clases
             Assert.AreEqual("You ran out of gas", _quesadilla.prepareSingle());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void quesadillaDoblePerfecta()
         {
             _mockedQueso.Setup(foo => foo.isMelted()).Returns(true);
@@ -89,7 +89,7 @@ namespace unittest_practiceTests.Clases
             Assert.AreEqual("Perfect quesadilla", _quesadilla.prepareDouble());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void quesadillaDobleBuena()
         {
             _mockedQueso.Setup(foo => foo.isMelted()).Returns(true);
@@ -104,7 +104,7 @@ namespace unittest_practiceTests.Clases
             Assert.AreEqual("Good quesadilla", _quesadilla.prepareDouble());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void quesadillaDobleRegular()
         {
             _mockedQueso.Setup(foo => foo.isMelted()).Returns(true);
@@ -119,7 +119,7 @@ namespace unittest_practiceTests.Clases
             Assert.AreEqual("Regular quesadilla", _quesadilla.prepareDouble());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void quesadillaDobleMala()
         {
             _mockedQueso.Setup(foo => foo.isMelted()).Returns(false);
@@ -134,7 +134,7 @@ namespace unittest_practiceTests.Clases
             Assert.AreEqual("Bad quesadilla", _quesadilla.prepareDouble());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void quesadillaDobleTerrible()
         {
             _mockedQueso.Setup(foo => foo.isMelted()).Returns(false);
@@ -149,7 +149,7 @@ namespace unittest_practiceTests.Clases
             Assert.AreEqual("Terrible quesadilla", _quesadilla.prepareDouble());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void noHayGasDopble()
         {
             _mockedQueso.Setup(foo => foo.isMelted()).Returns(false);

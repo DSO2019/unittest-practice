@@ -3,32 +3,32 @@ using unittestpractice.Clases;
 
 namespace unittest_practiceTests.Clases
 {
-    [TestClass()]
+    [TestClass]
     public class QuesoChihuahaTests
     {
         //Asserts
         private readonly QuesoChihuahua _quesoChihuahua = new QuesoChihuahua();
 
-        [TestMethod()]
+        [TestMethod]
         public void testCurrentTemperature()
         {
             _quesoChihuahua.setCurrentTemperature(21);
             Assert.AreEqual(21, _quesoChihuahua.getCurrentTemperature());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void testFalseMelt()
         {
             _quesoChihuahua.melt(false);
             Assert.IsFalse(_quesoChihuahua.isMelted());
         }
-        [TestMethod()]
+        [TestMethod]
         public void testTrueMelt()
         {
             _quesoChihuahua.melt(true);
             Assert.IsTrue(_quesoChihuahua.isMelted());
         }
-        [TestMethod()]
+        [TestMethod]
         public void testMelting()
         {
             Assert.AreEqual(20, _quesoChihuahua.getMeltingTemperature());

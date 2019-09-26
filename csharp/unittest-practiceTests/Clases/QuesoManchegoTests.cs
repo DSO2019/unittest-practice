@@ -4,33 +4,33 @@ using unittestpractice.Clases;
 namespace unittest_practiceTests.Clases
 {
     
-    [TestClass()]
+    [TestClass]
     public class QuesoManchegoTests
     {
         //Asserts
 
         private readonly QuesoManchego _quesoManchego = new QuesoManchego();
 
-        [TestMethod()]
+        [TestMethod]
         public void testCurrentTemperature()
         {
             _quesoManchego.setCurrentTemperature(21);
             Assert.AreEqual(21, _quesoManchego.getCurrentTemperature());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void testFalseMelt()
         {
             _quesoManchego.melt(false);
             Assert.IsFalse(_quesoManchego.isMelted());
         }
-        [TestMethod()]
+        [TestMethod]
         public void testTrueMelt()
         {
             _quesoManchego.melt(true);
             Assert.IsTrue(_quesoManchego.isMelted());
         }
-        [TestMethod()]
+        [TestMethod]
         public void testMelting()
         {
             Assert.AreEqual(25, _quesoManchego.getMeltingTemperature());

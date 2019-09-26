@@ -6,7 +6,7 @@ namespace unittestpractice.Clases
     {
         private bool _toasted;
         private int _temperature;
-        private int _toasting = 40;
+        private const int Toasting = 40;
 
         public bool isToasted()
         {
@@ -20,7 +20,7 @@ namespace unittestpractice.Clases
 
         public int getToastTemperature()
         {
-            return _toasting;
+            return Toasting;
         }
 
         public void setCurrentTemperature(int pTemp)
