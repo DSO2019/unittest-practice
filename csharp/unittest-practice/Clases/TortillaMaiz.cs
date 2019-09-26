@@ -1,40 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace unittestpractice.Clases
 {
-    public class TortillaMaiz : Tortilla
+    public class TortillaMaiz : ITortilla
     {
-        bool toasted;
-        int temperature;
-        int toasting = 35;
+        private bool _toasted;
+        private int _temperature;
+        private const int Toasting = 35;
 
         public bool isToasted()
         {
-            return this.toasted;
+            return _toasted;
         }
 
         public int getCurrentTemperature()
         {
-            return this.temperature;
+            return _temperature;
         }
 
         public int getToastTemperature()
         {
-            return this.toasting;
+            return Toasting;
         }
 
-        public void setCurrentTemperature(int temp)
+        public void setCurrentTemperature(int pTemp)
         {
-            this.temperature = temp;
+            _temperature = pTemp;
         }
 
-        public void toast(bool toasted)
+        public void toast(bool pToasted)
         {
-            this.toasted = toasted;
+            _toasted = pToasted;
         }
     }
 

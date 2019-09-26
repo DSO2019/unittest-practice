@@ -1,42 +1,37 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using unittestpractice.Clases;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace unittestpractice.Clases.Tests
+namespace unittest_practiceTests.Clases
 {
-    [TestClass()]
+    [TestClass]
     public class QuesoChihuahaTests
     {
         //Asserts
-        QuesoChihuahua quesoChihuahua = new QuesoChihuahua();
+        private readonly QuesoChihuahua _quesoChihuahua = new QuesoChihuahua();
 
-        [TestMethod()]
+        [TestMethod]
         public void testCurrentTemperature()
         {
-            quesoChihuahua.setCurrentTemperature(21);
-            Assert.AreEqual(21, quesoChihuahua.getCurrentTemperature());
+            _quesoChihuahua.setCurrentTemperature(21);
+            Assert.AreEqual(21, _quesoChihuahua.getCurrentTemperature());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void testFalseMelt()
         {
-            quesoChihuahua.melt(false);
-            Assert.IsFalse(quesoChihuahua.isMelted());
+            _quesoChihuahua.melt(false);
+            Assert.IsFalse(_quesoChihuahua.isMelted());
         }
-        [TestMethod()]
+        [TestMethod]
         public void testTrueMelt()
         {
-            quesoChihuahua.melt(true);
-            Assert.IsTrue(quesoChihuahua.isMelted());
+            _quesoChihuahua.melt(true);
+            Assert.IsTrue(_quesoChihuahua.isMelted());
         }
-        [TestMethod()]
+        [TestMethod]
         public void testMelting()
         {
-            Assert.AreEqual(25, quesoChihuahua.getMeltingTemperature());
+            Assert.AreEqual(20, _quesoChihuahua.getMeltingTemperature());
         }
     }
 }

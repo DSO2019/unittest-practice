@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace unittestpractice
 {
-    public interface Queso
+    public interface IQueso
     {
         bool isMelted();
         int getCurrentTemperature();
@@ -15,7 +11,7 @@ namespace unittestpractice
         void melt(bool melted);
     }
 
-    public interface Tortilla
+    public interface ITortilla
     {
         bool isToasted();
         int getToastTemperature();
@@ -24,4 +20,7 @@ namespace unittestpractice
         void toast(bool toasted);
 
     }
+
+
+
 }

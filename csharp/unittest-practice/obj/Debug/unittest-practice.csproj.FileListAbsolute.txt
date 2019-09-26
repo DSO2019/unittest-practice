@@ -7,3 +7,11 @@ C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp
 C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.csproj.CopyComplete
 C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.dll
 C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.pdb
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\bin\Debug\unittest-practice.dll
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\bin\Debug\unittest-practice.pdb
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\bin\Debug\nunit.framework.dll
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\bin\Debug\nunit.framework.xml
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.csprojAssemblyReference.cache
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.csproj.CopyComplete
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.dll
+C:\Users\artur\Desktop\SD\repo\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.pdb

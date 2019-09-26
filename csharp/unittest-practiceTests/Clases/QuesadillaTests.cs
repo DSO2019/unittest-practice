@@ -1,66 +1,168 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using unittestpractice;
 using unittestpractice.Clases;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace unittestpractice.Clases.Tests
+namespace unittest_practiceTests.Clases
 {
-    [TestClass()]
+    [TestClass]
     public class QuesadillaTests
     {
-        //TODO ARTURO
-           //Asserts
-        
+        private Quesadilla _quesadilla;
+        private Mock<IQueso> _mockedQueso;
+        private Mock<ITortilla> _mockedTortilla;
+        private Mock<ITortilla> _mockedTortilla2;
 
-        [TestMethod()]
-        public void prepareSingleTest()
+        [TestInitialize]
+        public void setup()
         {
-            Assert.Fail();
+            _quesadilla = new Quesadilla();
+            _mockedQueso = new Mock<IQueso>();
+            _mockedTortilla = new Mock<ITortilla>();
+            _mockedTortilla2 = new Mock<ITortilla>();
+            _quesadilla.setQueso(_mockedQueso.Object);
+            _quesadilla.setTortilla(_mockedTortilla.Object);
+            _quesadilla.setTortilla2(_mockedTortilla2.Object);
+            _quesadilla.setHeatLevel(10);
         }
 
-        [TestMethod()]
-        public void prepareDoubleTest()
+        [TestMethod]
+        public void quesadillaPerfecta()
         {
-            Assert.Fail();
+            _mockedQueso.Setup(foo => foo.isMelted()).Returns(true);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(true);
+            _mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(10);
+            _mockedTortilla.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla.Setup(foo => foo.getToastTemperature()).Returns(10);
+            Assert.AreEqual("Perfect quesadilla", _quesadilla.prepareSingle());
         }
 
-        [TestMethod()]
-        public void getQuesoTest()
+        [TestMethod]
+        public void quesadillaBuena()
         {
-            Assert.Fail();
+            _mockedQueso.Setup(foo => foo.isMelted()).Returns(true);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(false);
+            _mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(10);
+            _mockedTortilla.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla.Setup(foo => foo.getToastTemperature()).Returns(20);
+            Assert.AreEqual("Good quesadilla", _quesadilla.prepareSingle());
         }
 
-        [TestMethod()]
-        public void setQuesoTest()
+        [TestMethod]
+        public void quesadillaTerrible()
         {
-            Assert.Fail();
+            _mockedQueso.Setup(foo => foo.isMelted()).Returns(false);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(true);
+            _mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(20);
+            _mockedTortilla.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla.Setup(foo => foo.getToastTemperature()).Returns(10);
+            Assert.AreEqual("Terrible quesadilla", _quesadilla.prepareSingle());
         }
 
-        [TestMethod()]
-        public void getTortillaTest()
+        [TestMethod]
+        public void noHayGas()
         {
-            Assert.Fail();
+            _mockedQueso.Setup(foo => foo.isMelted()).Returns(false);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(false);
+            _mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(20);
+            _mockedTortilla.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla.Setup(foo => foo.getToastTemperature()).Returns(10);
+            Assert.AreEqual("You ran out of gas", _quesadilla.prepareSingle());
         }
 
-        [TestMethod()]
-        public void setTortillaTest()
+        [TestMethod]
+        public void quesadillaDoblePerfecta()
         {
-            Assert.Fail();
+            _mockedQueso.Setup(foo => foo.isMelted()).Returns(true);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(true);
+            _mockedTortilla2.Setup(foo => foo.isToasted()).Returns(true);
+            _mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(10);
+            _mockedTortilla.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla.Setup(foo => foo.getToastTemperature()).Returns(10);
+            _mockedTortilla2.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla2.Setup(foo => foo.getToastTemperature()).Returns(10);
+            Assert.AreEqual("Perfect quesadilla", _quesadilla.prepareDouble());
         }
 
-        [TestMethod()]
-        public void getHeatLevelTest()
+        [TestMethod]
+        public void quesadillaDobleBuena()
         {
-            Assert.Fail();
+            _mockedQueso.Setup(foo => foo.isMelted()).Returns(true);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(false);
+            _mockedTortilla2.Setup(foo => foo.isToasted()).Returns(true);
+            _mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(10);
+            _mockedTortilla.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla.Setup(foo => foo.getToastTemperature()).Returns(20);
+            _mockedTortilla2.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla2.Setup(foo => foo.getToastTemperature()).Returns(10);
+            Assert.AreEqual("Good quesadilla", _quesadilla.prepareDouble());
         }
 
-        [TestMethod()]
-        public void setHeatLevelTest()
+        [TestMethod]
+        public void quesadillaDobleRegular()
         {
-            Assert.Fail();
+            _mockedQueso.Setup(foo => foo.isMelted()).Returns(true);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(false);
+            _mockedTortilla2.Setup(foo => foo.isToasted()).Returns(false);
+            _mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(10);
+            _mockedTortilla.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla.Setup(foo => foo.getToastTemperature()).Returns(20);
+            _mockedTortilla2.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla2.Setup(foo => foo.getToastTemperature()).Returns(20);
+            Assert.AreEqual("Regular quesadilla", _quesadilla.prepareDouble());
         }
+
+        [TestMethod]
+        public void quesadillaDobleMala()
+        {
+            _mockedQueso.Setup(foo => foo.isMelted()).Returns(false);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(true);
+            _mockedTortilla2.Setup(foo => foo.isToasted()).Returns(true);
+            _mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(20);
+            _mockedTortilla.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla.Setup(foo => foo.getToastTemperature()).Returns(10);
+            _mockedTortilla2.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla2.Setup(foo => foo.getToastTemperature()).Returns(10);
+            Assert.AreEqual("Bad quesadilla", _quesadilla.prepareDouble());
+        }
+
+        [TestMethod]
+        public void quesadillaDobleTerrible()
+        {
+            _mockedQueso.Setup(foo => foo.isMelted()).Returns(false);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(false);
+            _mockedTortilla2.Setup(foo => foo.isToasted()).Returns(true);
+            _mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(20);
+            _mockedTortilla.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla.Setup(foo => foo.getToastTemperature()).Returns(20);
+            _mockedTortilla2.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla2.Setup(foo => foo.getToastTemperature()).Returns(10);
+            Assert.AreEqual("Terrible quesadilla", _quesadilla.prepareDouble());
+        }
+
+        [TestMethod]
+        public void noHayGasDopble()
+        {
+            _mockedQueso.Setup(foo => foo.isMelted()).Returns(false);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(false);
+            _mockedTortilla.Setup(foo => foo.isToasted()).Returns(false);
+            _mockedQueso.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedQueso.Setup(foo => foo.getMeltingTemperature()).Returns(20);
+            _mockedTortilla.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla.Setup(foo => foo.getToastTemperature()).Returns(10);
+            _mockedTortilla2.Setup(foo => foo.getCurrentTemperature()).Returns(14);
+            _mockedTortilla2.Setup(foo => foo.getToastTemperature()).Returns(10);
+            Assert.AreEqual("You ran out of gas", _quesadilla.prepareSingle());
+        }
+
     }
 }
