@@ -1,6 +1,7 @@
 package mx.iteso.ut;
 /**
- * Class.
+ * Hello world!
+ *
  */
 public class Quesadilla {
     /**
