@@ -1,44 +1,39 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using unittestpractice;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using unittestpractice.Clases;
 
-namespace unittestpractice.Tests
+namespace unittest_practiceTests.Clases
 {
     
-    [TestClass()]
+    [TestClass]
     public class QuesoManchegoTests
     {
         //Asserts
 
-        QuesoChihuahua quesoManchego = new QuesoChihuahua();
+        private readonly QuesoManchego _quesoManchego = new QuesoManchego();
 
-        [TestMethod()]
+        [TestMethod]
         public void testCurrentTemperature()
         {
-            quesoManchego.setCurrentTemperature(21);
-            Assert.AreEqual(21, quesoManchego.getCurrentTemperature());
+            _quesoManchego.setCurrentTemperature(21);
+            Assert.AreEqual(21, _quesoManchego.getCurrentTemperature());
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void testFalseMelt()
         {
-            quesoManchego.melt(false);
-            Assert.IsFalse(quesoManchego.isMelted());
+            _quesoManchego.melt(false);
+            Assert.IsFalse(_quesoManchego.isMelted());
         }
-        [TestMethod()]
+        [TestMethod]
         public void testTrueMelt()
         {
-            quesoManchego.melt(true);
-            Assert.IsTrue(quesoManchego.isMelted());
+            _quesoManchego.melt(true);
+            Assert.IsTrue(_quesoManchego.isMelted());
         }
-        [TestMethod()]
+        [TestMethod]
         public void testMelting()
         {
-            Assert.AreEqual(25, quesoManchego.getMeltingTemperature());
+            Assert.AreEqual(25, _quesoManchego.getMeltingTemperature());
         }
     }
 }
