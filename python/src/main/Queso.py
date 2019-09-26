@@ -1,5 +1,4 @@
 class Queso:
-
     def __init__(self, temperature=None, melted=None):
         self.melting = 20
         self.temperature = temperature

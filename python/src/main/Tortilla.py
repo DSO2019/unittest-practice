@@ -1,5 +1,4 @@
 class Tortilla:
-
     def __init__(self, toasted=None, temperature=None):
         self.toasting = 10
         self.toasted = toasted

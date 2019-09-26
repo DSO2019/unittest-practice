@@ -1,5 +1,6 @@
-import unittest
 from QuesoChihuahua import *
+import unittest
+
 
 class QuesoChihuahuaTest(unittest.TestCase):
     def setUp(self):

@@ -1,5 +1,6 @@
-import unittest
 from QuesoManchego import *
+import unittest
+
 
 class QuesoManchegoTest(unittest.TestCase):
     def setUp(self):

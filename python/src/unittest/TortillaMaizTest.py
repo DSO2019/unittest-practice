@@ -1,5 +1,6 @@
-import unittest
 from TortillaMaiz import *
+import unittest
+
 
 class TortillaMaizTest(unittest.TestCase):
     def setUp(self):
