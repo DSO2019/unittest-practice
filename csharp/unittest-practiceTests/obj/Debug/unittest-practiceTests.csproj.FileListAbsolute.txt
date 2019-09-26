@@ -17,3 +17,5 @@ C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp
 C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp\unittest-practiceTests\obj\Debug\unittest-practiceTests.csproj.CopyComplete
 C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp\unittest-practiceTests\obj\Debug\unittest-practiceTests.dll
 C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp\unittest-practiceTests\obj\Debug\unittest-practiceTests.pdb
+C:\Otono2019\unittest-practice\csharp\unittest-practiceTests\obj\Debug\unittest-practiceTests.dll
+C:\Otono2019\unittest-practice\csharp\unittest-practiceTests\obj\Debug\unittest-practiceTests.pdb

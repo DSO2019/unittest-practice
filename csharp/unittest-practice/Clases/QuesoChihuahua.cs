@@ -1,40 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace unittestpractice.Clases
+﻿namespace unittestpractice.Clases
 {
-    public class QuesoChihuaha : Queso
+    public class QuesoChihuahua : IQueso
     {
-        bool melted;
-        int temperature;
-        int melting = 20;
+        private bool _melted;
+        private int _temperature;
+        private const int Melting = 20;
 
-        public bool isMelted()
+        public bool IsMelted()
         {
-            return this.melted;
+            return _melted;
         }
 
-        public int getCurrentTemperature()
+        public int GetCurrentTemperature()
         {
-            return this.temperature;
+            return _temperature;
         }
 
-        public int getMeltingTemperature()
+        public int GetMeltingTemperature()
         {
-            return this.melting;
+            return Melting;
         }
 
-        public void setCurrentTemperature(int temp)
+        public void SetCurrentTemperature(int temp)
         {
-            this.temperature = temp;
+            _temperature = temp;
         }
 
-        public void melt(bool melted)
+        public void Melt(bool melted)
         {
-            this.melted = melted;
+            _melted = melted;
 
         }
     }

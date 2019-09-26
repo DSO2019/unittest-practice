@@ -7,3 +7,5 @@ C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp
 C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.csproj.CopyComplete
 C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.dll
 C:\Users\aceve\Documents\ITESO\9 NO\Diseño de Software\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.pdb
+C:\Otono2019\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.dll
+C:\Otono2019\unittest-practice\csharp\unittest-practice\obj\Debug\unittest-practice.pdb
