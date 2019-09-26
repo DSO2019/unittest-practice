@@ -1,4 +1,4 @@
-from ...main.python import TortillaMaiz
+from TortillaMaiz import *
 from mockito import when, mock, verify,assertEquals,assertFalse,assertTrue
 import unittest
 class TortillaMaizTest(unittest.TestCase):
@@ -6,8 +6,8 @@ class TortillaMaizTest(unittest.TestCase):
         self.tortillaMaiz = TortillaMaiz()
 
     def testCurrentTemperature(self):
-        self.tortillaMaiz.setCurrentTemperature(36)
-        assertEquals(36,self.tortillaMaiz.getCurrentTemperature())
+        self.tortillaMaiz.setCurrentTemperature(11)
+        assertEquals(11,self.tortillaMaiz.getCurrentTemperature())
 
     def testFalseToast(self):
         self.tortillaMaiz.toast(False)
@@ -18,4 +18,4 @@ class TortillaMaizTest(unittest.TestCase):
         assertTrue(self.tortillaMaiz.isToasted())
 
     def testToasting(self):
-        assertEquals(35,self.tortillaMaiz.getToastTemperature())
+        assertEquals(10,self.tortillaMaiz.getToastTemperature())

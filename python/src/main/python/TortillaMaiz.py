@@ -1,7 +1,7 @@
 class TortillaMaiz:
 
     def __init__():
-        self.toasting = 35
+        self.toasting = 10
         self.toasted = false
         self.temperature = 0
 

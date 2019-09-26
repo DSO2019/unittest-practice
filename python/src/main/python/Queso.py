@@ -1,4 +1,4 @@
-class QuesoManchego:
+class Queso:
 
     def __init__():
         self.melting = 20

@@ -1,4 +1,4 @@
-class TortillaHarina:
+class Tortilla:
 
     def __init__():
         self.toasting = 10

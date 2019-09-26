@@ -1,4 +1,4 @@
-from ...main.python import QuesoManchego
+from QuesoManchego import *
 from mockito import when, mock, verify,assertEquals,assertFalse,assertTrue
 import unittest
 class QuesoManchegoTest(unittest.TestCase):
@@ -6,8 +6,8 @@ class QuesoManchegoTest(unittest.TestCase):
         self.quesoManchego = QuesoManchego()
 
     def testCurrentTemperature(self):
-        self.quesoManchego.setCurrentTemperature(26)
-        assertEquals(26,self.quesoManchego.getCurrentTemperature())
+        self.quesoManchego.setCurrentTemperature(21)
+        assertEquals(21,self.quesoManchego.getCurrentTemperature())
     
     def testFalseMelt(self):
         self.quesoManchego.melt(False)
@@ -18,4 +18,4 @@ class QuesoManchegoTest(unittest.TestCase):
         assertTrue(self.quesoManchego.isMelted())
     
     def testMelting(self):
-        assertEquals(21,self.quesoManchego.getMeltingTemperature())
+        assertEquals(20,self.quesoManchego.getMeltingTemperature())
