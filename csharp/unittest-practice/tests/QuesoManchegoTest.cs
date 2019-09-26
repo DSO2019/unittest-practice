@@ -4,44 +4,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using unittestPractice.main;
 
 namespace unittestPractice.test
 {
     [TestFixture]
     class QuesoManchegoTest
     {
-        QuesoManchego quesoManchego;
+        private QuesoManchego _quesoManchego;
 
         [SetUp]
-        public void setUp()
+        public void SetUp()
         {
-            quesoManchego = new QuesoManchego();
+            _quesoManchego = new QuesoManchego();
         }
 
         [TestCase]
-        public void testCurrentTemperature()
+        public void TestCurrentTemperature()
         {
-            quesoManchego.setCurrentTemperature(21);
-            Assert.AreEqual(21, quesoManchego.getCurrentTemperature());
+            _quesoManchego.SetCurrentTemperature(21);
+            Assert.AreEqual(21, _quesoManchego.GetCurrentTemperature());
         }
 
         [TestCase]
-        public void testFalseMelt()
+        public void TestFalseMelt()
         {
-            quesoManchego.melt(false);
-            Assert.IsFalse(quesoManchego.isMelted());
+            _quesoManchego.Melt(false);
+            Assert.IsFalse(_quesoManchego.IsMelted());
         }
 
         [TestCase]
-        public void testTrueMelt()
+        public void TestTrueMelt()
         {
-            quesoManchego.melt(true);
-            Assert.IsTrue(quesoManchego.isMelted());
+            _quesoManchego.Melt(true);
+            Assert.IsTrue(_quesoManchego.IsMelted());
         }
         [TestCase]
-        public void testMelting()
+        public void TestMelting()
         {
-            Assert.AreEqual(20, quesoManchego.getMeltingTemperature());
+            Assert.AreEqual(20, _quesoManchego.GetMeltingTemperature());
         }
 
 

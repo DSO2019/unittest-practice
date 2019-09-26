@@ -4,37 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace unittestPractice
+namespace unittestPractice.main
 {
-    class QuesoChihuahua : Queso
+    internal class QuesoChihuahua : IQueso
     {
-        Boolean melted;
-        int temperature;
-        int melting = 20;
+        private bool _melted;
+        private  int _temperature;
+        private readonly int Melting = 20;
 
-        public Boolean isMelted()
+        public bool IsMelted()
         {
-            return this.melted;
+            return this._melted;
         }
 
-        public int getCurrentTemperature()
+        public int GetCurrentTemperature()
         {
-            return this.temperature;
+            return this._temperature;
         }
 
-        public int getMeltingTemperature()
+        public int GetMeltingTemperature()
         {
-            return this.melting;
+            return this.Melting;
         }
 
-        public void setCurrentTemperature(int temp)
+        public void SetCurrentTemperature(int temp)
         {
-            this.temperature = temp;
+            this._temperature = temp;
         }
 
-        public void melt(bool melted)
+        public void Melt(bool melted)
         {
-            this.melted = melted;
+            this._melted = melted;
 
         }
     }

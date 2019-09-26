@@ -3,70 +3,140 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using unittestPractice.main;
 
-namespace unittestPractice
+namespace unittestPractice.main
 {
-    class Quesadilla
+    internal class Quesadilla
     {
-        private Queso queso;
-        private Tortilla tortilla;
-        private int heatLevel;
+        private IQueso _queso;
+        private ITortilla _tortilla1;
+        private ITortilla _tortilla2;
+        private int _heatLevel;
 
-        public String prepareSingle()
+        public string prepareSingle()
         {
-            while (getQueso().getCurrentTemperature() < getQueso().getMeltingTemperature() && getTortilla().getCurrentTemperature() < getTortilla().getToastTemperature())
+            while (GetQueso().GetCurrentTemperature() < GetQueso().GetMeltingTemperature() && GetTortilla1().GetCurrentTemperature() < GetTortilla1().GetToastTemperature())
             {
-                getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
-                getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
-                if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
-                    getTortilla().toast(true);
-                if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
-                    getQueso().melt(true);
+                GetTortilla1().SetCurrentTemperature(GetTortilla1().GetCurrentTemperature() + GetHeatLevel());
+                GetQueso().SetCurrentTemperature(GetQueso().GetCurrentTemperature() + GetHeatLevel());
+                if (GetTortilla1().GetCurrentTemperature() >= GetTortilla1().GetToastTemperature())
+                    GetTortilla1().Toast(true);
+                if (GetQueso().GetCurrentTemperature() >= GetQueso().GetMeltingTemperature())
+                    GetQueso().Melt(true);
             }
-            if (getQueso().isMelted() && getTortilla().isToasted())
+            if (GetQueso().IsMelted() && GetTortilla1().IsToasted())
                 return "Perfect quesadilla";
-            if (getQueso().isMelted() && !getTortilla().isToasted())
+            if (GetQueso().IsMelted() && !GetTortilla1().IsToasted())
                 return "Good quesadilla";
-            if (!getQueso().isMelted() && getTortilla().isToasted())
+            if (!GetQueso().IsMelted() && GetTortilla1().IsToasted())
                 return "Terrible quesadilla";
             else
                 return "You ran out of gas";
         }
 
 
-        public String prepareDouble()
+        public string PrepareDouble()
         {
-            return "";
+            while (GetQueso().GetCurrentTemperature()
+            < GetQueso().GetMeltingTemperature()
+            && GetTortilla1().GetCurrentTemperature()
+            < GetTortilla1().GetToastTemperature()
+            && GetTortilla2().GetCurrentTemperature()
+            < GetTortilla2().GetToastTemperature())
+            {
+                GetTortilla1().SetCurrentTemperature(
+                    GetTortilla1().GetCurrentTemperature() + GetHeatLevel());
+                GetTortilla2().SetCurrentTemperature(
+                    GetTortilla2().GetCurrentTemperature() + GetHeatLevel());
+                GetQueso().SetCurrentTemperature(
+                    GetQueso().GetCurrentTemperature() + GetHeatLevel());
+                if (GetTortilla1().GetCurrentTemperature()
+                   >= GetTortilla1().GetToastTemperature())
+                {
+                    GetTortilla1().Toast(true);
+                }
+                if (GetTortilla2().GetCurrentTemperature()
+                   >= GetTortilla2().GetToastTemperature())
+                {
+                    GetTortilla2().Toast(true);
+                }
+                if (GetQueso().GetCurrentTemperature()
+                   >= GetQueso().GetMeltingTemperature())
+                {
+                    GetQueso().Melt(true);
+                }
+            }
+
+            if (GetQueso().IsMelted() && GetTortilla1().IsToasted()
+                && GetTortilla2().IsToasted())
+            {
+                return "Perfect quesadilla";
+            }
+            if (GetQueso().IsMelted() && GetTortilla1().IsToasted()
+                && !GetTortilla2().IsToasted())
+            {
+                return "Good quesadilla";
+            }
+            if (GetQueso().IsMelted() && !GetTortilla1().IsToasted()
+                && !GetTortilla2().IsToasted())
+            {
+                return "Regular quesadilla";
+            }
+            if (!GetQueso().IsMelted() && GetTortilla1().IsToasted()
+                && GetTortilla2().IsToasted())
+            {
+                return "Mala quesadilla";
+            }
+            if (!GetQueso().IsMelted() && GetTortilla1().IsToasted()
+                && !GetTortilla2().IsToasted())
+            {
+                return "Terrible quesadilla";
+            }
+            else
+            {
+                return "You ran out of gas";
+            }
         }
 
-        public Queso getQueso()
+        public IQueso GetQueso()
         {
-            return queso;
+            return _queso;
         }
 
-        public void setQueso(Queso queso)
+        public void SetQueso(IQueso queso)
         {
-            this.queso = queso;
+            this._queso = queso;
         }
 
-        public Tortilla getTortilla()
+        public ITortilla GetTortilla1()
         {
-            return tortilla;
+            return _tortilla1;
         }
 
-        public void setTortilla(Tortilla tortilla)
+        public ITortilla GetTortilla2()
         {
-            this.tortilla = tortilla;
+            return _tortilla2;
         }
 
-        public int getHeatLevel()
+        public void SetTortilla1(ITortilla tortilla)
         {
-            return heatLevel;
+            this._tortilla1 = tortilla;
         }
 
-        public void setHeatLevel(int heatLevel)
+        public void SetTortilla2(ITortilla tortilla)
         {
-            this.heatLevel = heatLevel;
+            this._tortilla2 = tortilla;
+        }
+
+        public int GetHeatLevel()
+        {
+            return _heatLevel;
+        }
+
+        public void SetHeatLevel(int heatLevel)
+        {
+            this._heatLevel = heatLevel;
         }
 
     }

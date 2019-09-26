@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace unittestPractice
+namespace unittestPractice.main
 {
-    public interface Queso
+    public interface IQueso
     {
-        bool isMelted();
-        int getCurrentTemperature();
-        int getMeltingTemperature();
-        void setCurrentTemperature(int temp);
-        void melt(bool melted);
+        bool IsMelted();
+        int GetCurrentTemperature();
+        int GetMeltingTemperature();
+        void SetCurrentTemperature(int temp);
+        void Melt(bool melted);
 
     }
 }

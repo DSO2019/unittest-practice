@@ -4,36 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace unittestPractice
+namespace unittestPractice.main
 {
-    class TortillaHarina : Tortilla
+    internal class TortillaHarina : ITortilla
     {
-        bool toasted;
-        int temperature;
-        int toasting = 20;
-        public bool isToasted()
+        private bool _toasted;
+        private int _temperature;
+        private readonly int _toasting = 20;
+        public bool IsToasted()
         {
-            return this.toasted;
+            return this._toasted;
         }
 
-        public int getToastTemperature()
+        public int GetToastTemperature()
         {
-            return this.toasting;
+            return this._toasting;
         }
 
-        public int getCurrentTemperature()
+        public int GetCurrentTemperature()
         {
-            return this.temperature;
+            return this._temperature;
         }
 
-        public void setCurrentTemperature(int temp)
+        public void SetCurrentTemperature(int temp)
         {
-            this.temperature = temp;
+            this._temperature = temp;
         }
 
-        public void toast(bool toasted)
+        public void Toast(bool toasted)
         {
-            this.toasted = toasted;
+            this._toasted = toasted;
         }
     }
 }

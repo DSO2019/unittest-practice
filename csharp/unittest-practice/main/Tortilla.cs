@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace unittestPractice
+namespace unittestPractice.main
 {
-    public interface Tortilla
+    public interface ITortilla
     {
-        bool isToasted();
-        int getToastTemperature();
-        int getCurrentTemperature();
-        void setCurrentTemperature(int temp);
-        void toast(bool toasted);
+        bool IsToasted();
+        int GetToastTemperature();
+        int GetCurrentTemperature();
+        void SetCurrentTemperature(int temp);
+        void Toast(bool toasted);
     }
 }

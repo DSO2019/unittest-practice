@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using unittestPractice.main;
 
 namespace unittestPractice.test
 {
@@ -11,38 +12,38 @@ namespace unittestPractice.test
 
     [TestFixture]
     class QuesoChihuahuaTest { 
-        QuesoChihuahua quesoChihuahua;
+        private QuesoChihuahua _quesoChihuahua;
 
         [SetUp]
-        public void setUp()
+        public void SetUp()
         {
-            quesoChihuahua = new QuesoChihuahua();
+            _quesoChihuahua = new QuesoChihuahua();
         }
 
         [TestCase]
-        public void testCurrentTemperature()
+        public void TestCurrentTemperature()
         {
-            quesoChihuahua.setCurrentTemperature(21);
-            Assert.AreEqual(21, quesoChihuahua.getCurrentTemperature());            
+            _quesoChihuahua.SetCurrentTemperature(21);
+            Assert.AreEqual(21, _quesoChihuahua.GetCurrentTemperature());            
         }
 
         [TestCase]
-        public void testFalseMelt()
+        public void TestFalseMelt()
         {
-            quesoChihuahua.melt(false);
-            Assert.IsFalse(quesoChihuahua.isMelted());
+            _quesoChihuahua.Melt(false);
+            Assert.IsFalse(_quesoChihuahua.IsMelted());
         }
 
         [TestCase]
-        public void testTrueMelt()
+        public void TestTrueMelt()
         {
-            quesoChihuahua.melt(true);
-            Assert.IsTrue(quesoChihuahua.isMelted());
+            _quesoChihuahua.Melt(true);
+            Assert.IsTrue(_quesoChihuahua.IsMelted());
         }
         [TestCase]
-        public void testMelting()
+        public void TestMelting()
         {
-            Assert.AreEqual(20, quesoChihuahua.getMeltingTemperature());
+            Assert.AreEqual(20, _quesoChihuahua.GetMeltingTemperature());
         }
 
 
