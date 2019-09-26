@@ -1,21 +1,22 @@
-import unittest
 from TortillaMaiz import *
+import unittest
+
 
 class TortillaMaizTest(unittest.TestCase):
     def setUp(self):
         self.tortillaMaiz = TortillaMaiz()
 
-    def testCurrentTemperature(self):
+    def test_CurrentTemperature(self):
         self.tortillaMaiz.setCurrentTemperature(21)
-        self.assertEqual(21,self.tortillaMaiz.getCurrentTemperature())
+        self.assertEquals(21, self.tortillaMaiz.getCurrentTemperature())
 
-    def testFalseToast(self):
+    def test_FalseToast(self):
         self.tortillaMaiz.toast(False)
         self.assertFalse(self.tortillaMaiz.isToasted())
 
-    def testTrueToast(self):
+    def test_TrueToast(self):
         self.tortillaMaiz.toast(True)
         self.assertTrue(self.tortillaMaiz.isToasted())
 
-    def testToasting(self):
-        self.assertEqual(10,self.tortillaMaiz.getToastTemperature())
+    def test_Toasting(self):
+        self.assertEquals(10, self.tortillaMaiz.getToastTemperature())

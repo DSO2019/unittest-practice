@@ -1,21 +1,20 @@
-class Queso:
-    def __init__(self, temperature=None, melted=None):
-        self.melting = 20
+class Tortilla:
+    def __init__(self, toasted=None, temperature=None):
+        self.toasting = 10
+        self.toasted = toasted
         self.temperature = temperature
-        self.melted = melted
 
-    def isMelted(self):
-        return self.melted
+    def isToasted(self):
+        return self.toasted
+
+    def getToastTemperature(self):
+        return self.toasting
 
     def getCurrentTemperature(self):
         return self.temperature
 
-    def getMeltingTemperature(self):
-        return self.melting
-
     def setCurrentTemperature(self, temp):
         self.temperature = temp
 
-    def melt(self, melted):
-        self.melted = melted
-
+    def toast(self, toasted):
+        self.toasted = toasted
