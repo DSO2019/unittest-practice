@@ -1,5 +1,5 @@
-from TortillaMaiz import *
 import unittest
+from TortillaMaiz import *
 
 
 class TortillaMaizTest(unittest.TestCase):

@@ -1,8 +1,8 @@
-from mockito import mock, verify, when
 import unittest
 from Quesadilla import *
 from Queso import *
 from Tortilla import *
+from mockito import mock, verify, when
 
 
 class QuesadillaTest(unittest.TestCase):

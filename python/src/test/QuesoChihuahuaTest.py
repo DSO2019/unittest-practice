@@ -1,5 +1,5 @@
-from QuesoChihuahua import *
 import unittest
+from QuesoChihuahua import *
 
 
 class QuesoChihuahuaTest(unittest.TestCase):

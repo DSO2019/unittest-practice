@@ -1,5 +1,5 @@
-from QuesoManchego import *
 import unittest
+from QuesoManchego import *
 
 
 class QuesoManchegoTest(unittest.TestCase):
