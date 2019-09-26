@@ -1,44 +1,39 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using unittestpractice.Clases;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace unittestpractice.Clases.Tests
+namespace unittest_practiceTests.Clases
 {
     [TestClass()]
     public class TortillaHarinaTests
     {
         //Asserts
-        TortillaHarina tortillaHarina = new TortillaHarina();
+        private readonly TortillaHarina _tortillaHarina = new TortillaHarina();
 
         [TestMethod()]
         public void testCurrentTemperature()
         {
-            tortillaHarina.setCurrentTemperature(21);
-            Assert.AreEqual(21, tortillaHarina.getCurrentTemperature());
+            _tortillaHarina.setCurrentTemperature(21);
+            Assert.AreEqual(21, _tortillaHarina.getCurrentTemperature());
         }
 
         [TestMethod()]
         public void testFalseToast()
         {
-            tortillaHarina.toast(false);
-            Assert.IsFalse(tortillaHarina.isToasted());
+            _tortillaHarina.toast(false);
+            Assert.IsFalse(_tortillaHarina.isToasted());
         }
 
         [TestMethod()]
         public void testTrueToast()
         {
-            tortillaHarina.toast(true);
-            Assert.IsTrue(tortillaHarina.isToasted());
+            _tortillaHarina.toast(true);
+            Assert.IsTrue(_tortillaHarina.isToasted());
         }
 
         [TestMethod()]
         public void testToasting()
         {
-            Assert.AreEqual(40, tortillaHarina.getToastTemperature());
+            Assert.AreEqual(40, _tortillaHarina.getToastTemperature());
         }
     }
 }

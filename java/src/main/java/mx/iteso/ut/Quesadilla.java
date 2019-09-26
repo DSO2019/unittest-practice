@@ -61,7 +61,7 @@ public class Quesadilla {
      */
     public String prepareDouble() {
         while (getQueso().getCurrentTemperature()
-        < getQueso().getMeltingTemperature()
+            < getQueso().getMeltingTemperature()
                 && getTortilla().getCurrentTemperature()
                 < getTortilla().getToastTemperature()
                 && getTortilla2().getCurrentTemperature()
