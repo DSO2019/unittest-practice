@@ -10,30 +10,30 @@ namespace unittest_practiceTests.Clases
         private readonly TortillaMaiz _tortillaMaiz = new TortillaMaiz();
 
         [TestMethod]
-        public void testCurrentTemperature()
+        public void TestCurrentTemperature()
         {
-            _tortillaMaiz.setCurrentTemperature(21);
-            Assert.AreEqual(21, _tortillaMaiz.getCurrentTemperature());
+            _tortillaMaiz.SetCurrentTemperature(21);
+            Assert.AreEqual(21, _tortillaMaiz.GetCurrentTemperature());
         }
 
         [TestMethod]
-        public void testFalseToast()
+        public void TestFalseToast()
         {
-            _tortillaMaiz.toast(false);
-            Assert.IsFalse(_tortillaMaiz.isToasted());
+            _tortillaMaiz.Toast(false);
+            Assert.IsFalse(_tortillaMaiz.IsToasted());
         }
 
         [TestMethod]
-        public void testTrueToast()
+        public void TestTrueToast()
         {
-            _tortillaMaiz.toast(true);
-            Assert.IsTrue(_tortillaMaiz.isToasted());
+            _tortillaMaiz.Toast(true);
+            Assert.IsTrue(_tortillaMaiz.IsToasted());
         }
 
         [TestMethod]
-        public void testToasting()
+        public void TestToasting()
         {
-            Assert.AreEqual(35, _tortillaMaiz.getToastTemperature());
+            Assert.AreEqual(35, _tortillaMaiz.GetToastTemperature());
         }
     }
 }

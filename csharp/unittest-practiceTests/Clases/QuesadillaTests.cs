@@ -14,7 +14,7 @@ namespace unittest_practiceTests.Clases
         private Mock<ITortilla> _mockedTortilla2;
 
         [TestInitialize]
-        public void setup()
+        public void Setup()
         {
             _quesadilla = new Quesadilla();
             _mockedQueso = new Mock<IQueso>();

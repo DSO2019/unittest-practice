@@ -10,28 +10,28 @@ namespace unittest_practiceTests.Clases
         private readonly TortillaHarina _tortillaHarina = new TortillaHarina();
 
         [TestMethod]
-        public void testCurrentTemperature()
+        public void TestCurrentTemperature()
         {
             _tortillaHarina.SetCurrentTemperature(21);
             Assert.AreEqual(21, _tortillaHarina.GetCurrentTemperature());
         }
 
         [TestMethod]
-        public void testFalseToast()
+        public void TestFalseToast()
         {
             _tortillaHarina.Toast(false);
             Assert.IsFalse(_tortillaHarina.IsToasted());
         }
 
         [TestMethod]
-        public void testTrueToast()
+        public void TestTrueToast()
         {
             _tortillaHarina.Toast(true);
             Assert.IsTrue(_tortillaHarina.IsToasted());
         }
 
         [TestMethod]
-        public void testToasting()
+        public void TestToasting()
         {
             Assert.AreEqual(40, _tortillaHarina.GetToastTemperature());
         }
